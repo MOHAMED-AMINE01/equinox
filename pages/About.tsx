@@ -87,13 +87,13 @@ export const About: React.FC = () => {
                {/* Certifications */}
                <div className="flex flex-col">
                   <div className="flex items-center gap-4 mb-8">
-                     <div className="w-16 h-16 rounded-full bg-surface flex items-center justify-center text-primary border border-white/10 shrink-0 shadow-[0_0_20px_rgba(37,99,235,0.25)]">
+                     <div className="w-16 h-16 rounded-full bg-surfaceLight/30 flex items-center justify-center text-primary border border-white/10 shrink-0 shadow-[0_0_20px_rgba(21, 19, 42, 0.25)]">
                         <Award size={32} />
                      </div>
                      <h3 className="text-2xl md:text-3xl font-display font-bold">Certifications</h3>
                   </div>
                   
-                  <div className="bg-surfaceLight p-6 md:p-8 rounded-2xl border border-white/5 relative overflow-hidden group flex-grow">
+                  <div className="bg-white/5 p-6 md:p-8 rounded-2xl border border-white/5 relative overflow-hidden group flex-grow">
                      <div className="absolute top-0 right-0 p-8 opacity-5 text-white group-hover:opacity-10 transition-opacity pointer-events-none">
                         <Award size={100} strokeWidth={1.5} />
                      </div>
@@ -113,13 +113,13 @@ export const About: React.FC = () => {
                {/* Zone d'intervention */}
                <div className="flex flex-col">
                   <div className="flex items-center gap-4 mb-8">
-                      <div className="w-16 h-16 rounded-full bg-surface flex items-center justify-center text-primary border border-white/10 shrink-0 shadow-[0_0_20px_rgba(37,99,235,0.25)]">
+                      <div className="w-16 h-16 rounded-full bg-surfaceLight/30 flex items-center justify-center text-primary border border-white/10 shrink-0 shadow-[0_0_20px_rgba(21, 19, 42, 0.25)]">
                         <MapPin size={32} />
                      </div>
                      <h3 className="text-2xl md:text-3xl font-display font-bold">Zone d’intervention</h3>
                   </div>
 
-                  <div className="bg-surfaceLight p-6 md:p-8 rounded-2xl border border-white/5 relative overflow-hidden group text-textMuted text-lg leading-relaxed flex-grow">
+                  <div className="bg-white/5 p-6 md:p-8 rounded-2xl border border-white/5 relative overflow-hidden group text-textMuted text-lg leading-relaxed flex-grow">
                      <p className="mb-6">
                         EQUINOX est implantée stratégiquement avec deux établissements : l’un à <span className="text-white font-bold">Nice</span>, au cœur des Alpes-Maritimes, et l’autre à <span className="text-white font-bold">Monaco</span>.
                      </p>
@@ -173,7 +173,7 @@ export const About: React.FC = () => {
                      </div>
                   </div>
                   <div className="lg:w-1/2 lg:pl-16 order-1 lg:order-2">
-                     <div className="bg-surfaceLight p-6 md:p-8 rounded-2xl border border-white/10">
+                     <div className="bg-white/5 p-6 md:p-8 rounded-2xl border border-white/10">
                         <h4 className="font-bold text-white mb-4 flex items-center gap-3"><ClipboardCheck className="text-primary"/> Anticipation logistique</h4>
                         <p className="text-textMuted text-sm leading-relaxed">
                            Derrière chaque installation parfaitement exécutée se cache une organisation logistique millimétrée. Notre gestion des commandes s’appuie sur une coordination étroite entre les équipes commerciales et opérationnelles. Avant même la livraison sur site, une phase de préparation minutieuse est réalisée dans notre atelier : les équipements sont préassemblés, vérifiés et conditionnés.
@@ -185,7 +185,7 @@ export const About: React.FC = () => {
                {/* STEP 2 */}
                <div className="flex flex-col lg:flex-row gap-12 items-center">
                   <div className="lg:w-1/2 lg:pr-16 order-2 lg:order-1">
-                      <div className="bg-surfaceLight p-6 md:p-8 rounded-2xl border border-white/10">
+                      <div className="bg-white/5 p-6 md:p-8 rounded-2xl border border-white/10">
                         <h4 className="font-bold text-white mb-4 flex items-center gap-3"><Wrench className="text-primary"/> Installation & mise en service</h4>
                         <p className="text-textMuted text-sm leading-relaxed">
                            Chaque projet d’aménagement est mené avec un souci du détail constant. Nous assurons l’implantation complète des équipements dans toutes les zones fonctionnelles : espaces de cuisson, laveries, réserves, bars. Les essais techniques sont réalisés avec méthode : mise sous pression, vérifications d’étanchéité, réglages précis.
@@ -215,7 +215,7 @@ export const About: React.FC = () => {
                      </div>
                   </div>
                   <div className="lg:w-1/2 lg:pl-16 order-1 lg:order-2">
-                     <div className="bg-surfaceLight p-6 md:p-8 rounded-2xl border border-white/10">
+                     <div className="bg-white/5 p-6 md:p-8 rounded-2xl border border-white/10">
                         <h4 className="font-bold text-white mb-4 flex items-center gap-3"><Sparkles className="text-primary"/> Prise en main</h4>
                         <p className="text-textMuted text-sm leading-relaxed">
                            Nous assurons une prise en main en douceur : nous accompagnons les utilisateurs dans la bonne manipulation et l’entretien courant de chaque équipement. Des démonstrations, des réponses concrètes, et surtout une promesse tenue : transmettre bien plus qu’un équipement, transmettre un savoir-faire.
@@ -298,7 +298,7 @@ export const About: React.FC = () => {
             </p>
             
             <Link to="/contact" className="group relative inline-flex items-center h-20 w-full max-w-[280px] cursor-pointer mx-auto">
-               <span className="absolute left-0 h-20 w-20 bg-surfaceLight rounded-full transition-all duration-500 ease-in-out group-hover:w-full group-hover:bg-primary border border-white/10 shadow-xl"></span>
+               <span className="absolute left-0 h-20 w-20 bg-white/5 rounded-full transition-all duration-500 ease-in-out group-hover:w-full group-hover:bg-primary border border-white/10 shadow-xl"></span>
                <span className="relative z-10 pl-8 w-full text-center pr-8 text-sm font-bold tracking-[0.2em] uppercase text-white transition-colors whitespace-nowrap flex items-center justify-center gap-4">
                   Contactez-nous
                </span>

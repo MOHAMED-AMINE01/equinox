@@ -1,4 +1,98 @@
-import React from 'react';
+// Carousel component with modal and navigation arrows
+const Carousel: React.FC<{ images: string[] }> = ({ images }) => {
+  const [current, setCurrent] = React.useState(0);
+  const [modalOpen, setModalOpen] = React.useState(false);
+
+  React.useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrent((prev) => (prev + 1) % images.length);
+    }, 3000);
+    return () => clearInterval(timer);
+  }, [images.length]);
+
+  const goToPrev = (e?: React.MouseEvent) => {
+    if (e) e.stopPropagation();
+    setCurrent((prev) => (prev - 1 + images.length) % images.length);
+  };
+  const goToNext = (e?: React.MouseEvent) => {
+    if (e) e.stopPropagation();
+    setCurrent((prev) => (prev + 1) % images.length);
+  };
+
+  return (
+    <>
+      <div className="relative w-full aspect-square overflow-hidden group">
+        {images.map((img, i) => (
+          <img
+            key={i}
+            src={img}
+            alt={`Project detail ${i + 1}`}
+            className={`absolute inset-0 w-full h-full object-cover rounded-lg transition-opacity duration-700 cursor-zoom-in ${i === current ? 'opacity-100 z-10' : 'opacity-0 z-0'}`}
+            onClick={() => setModalOpen(true)}
+          />
+        ))}
+        {/* Navigation arrows (show on hover/focus) */}
+        <button
+          className="absolute left-2 top-1/2 -translate-y-1/2 bg-black/40 hover:bg-black/70 text-white rounded-full p-2 z-20 opacity-0 group-hover:opacity-100 group-focus-within:opacity-100 transition-opacity duration-200"
+          onClick={goToPrev}
+          aria-label="Image précédente"
+        >
+          <svg width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path d="M15 19l-7-7 7-7"/></svg>
+        </button>
+        <button
+          className="absolute right-2 top-1/2 -translate-y-1/2 bg-black/40 hover:bg-black/70 text-white rounded-full p-2 z-20 opacity-0 group-hover:opacity-100 group-focus-within:opacity-100 transition-opacity duration-200"
+          onClick={goToNext}
+          aria-label="Image suivante"
+        >
+          <svg width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg>
+        </button>
+        {/* Dots */}
+        <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2">
+          {images.map((_, i) => (
+            <button
+              key={i}
+              className={`w-3 h-3 rounded-full border border-white/40 bg-white/30 transition-all duration-300 ${i === current ? 'bg-primary border-primary scale-110' : ''}`}
+              onClick={(e) => { e.stopPropagation(); setCurrent(i); }}
+              aria-label={`Voir l'image ${i + 1}`}
+            />
+          ))}
+        </div>
+      </div>
+      {/* Modal for large image */}
+      {modalOpen && (
+        <div
+          className="fixed inset-0 bg-black/80 flex items-center justify-center z-50 cursor-zoom-out"
+          onClick={() => setModalOpen(false)}
+        >
+          <div className="relative max-w-3xl w-full flex items-center justify-center">
+            <img
+              src={images[current]}
+              alt={`Project detail grand ${current + 1}`}
+              className="w-full max-h-[80vh] object-contain rounded-lg shadow-2xl"
+              onClick={e => e.stopPropagation()}
+            />
+            {/* Modal navigation arrows */}
+            <button
+              className="absolute left-2 top-1/2 -translate-y-1/2 bg-black/60 hover:bg-black/90 text-white rounded-full p-3 z-60"
+              onClick={goToPrev}
+              aria-label="Image précédente"
+            >
+              <svg width="32" height="32" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path d="M15 19l-7-7 7-7"/></svg>
+            </button>
+            <button
+              className="absolute right-2 top-1/2 -translate-y-1/2 bg-black/60 hover:bg-black/90 text-white rounded-full p-3 z-60"
+              onClick={goToNext}
+              aria-label="Image suivante"
+            >
+              <svg width="32" height="32" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg>
+            </button>
+          </div>
+        </div>
+      )}
+    </>
+  );
+};
+import React, { FC, useState, useEffect } from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
 import { projectsData } from '../data/projects';
 import { ArrowLeft, ArrowRight, CheckCircle } from 'lucide-react';
@@ -51,7 +145,7 @@ export const ProjectDetails: React.FC = () => {
           <div className="flex items-center gap-6 text-xs font-bold tracking-[0.2em] text-textMuted uppercase mb-4">
             <Link to="/portfolio" className="hover:text-primary transition-colors">Réalisations</Link>
             <span className="w-8 h-[1px] bg-primary"></span>
-            <span className="text-white">{project.title}</span>
+            <span className="">{project.category}</span>
           </div>
           <h1 className="text-5xl md:text-7xl font-display font-bold uppercase tracking-tight text-white drop-shadow-2xl">
             {project.title}
@@ -88,12 +182,13 @@ export const ProjectDetails: React.FC = () => {
             <div className="lg:col-span-4">
               <h2 className="text-4xl font-display font-bold sticky top-32">01. <br/> Le Challenge</h2>
             </div>
-            <div className="lg:col-span-8 text-lg text-textMuted leading-relaxed space-y-6">
-              <p className="text-xl text-white italic">{project.challenge}</p>
+            <div className="lg:col-span-8 text-lg text-textMuted leading-relaxed lg:flex lg:flex-row gap-8 items-center">
+              <div className="flex-1">
+                <p className="text-xl text-white italic">{project.challenge}</p>
+              </div>
               {project.gallery && (
-                <div className="grid grid-cols-2 gap-4 pt-4">
-                  <img src={project.gallery[0]} alt="Project detail 1" className="rounded-lg aspect-square object-cover" />
-                  <img src={project.gallery[1]} alt="Project detail 2" className="rounded-lg aspect-square object-cover" />
+                <div className="pt-4 lg:w-[35%] min-w-[180px] max-w-[500px] flex-shrink-0">
+                  <Carousel images={project.gallery} />
                 </div>
               )}
             </div>
@@ -124,7 +219,7 @@ export const ProjectDetails: React.FC = () => {
             </div>
             <div className="lg:col-span-8 text-lg text-textMuted leading-relaxed space-y-6">
               <blockquote className="border-l-4 border-primary pl-6 my-6 italic text-xl text-white">
-                 "La précision technique au service de l’émotion."
+                 La précision technique au service de l’émotion.
               </blockquote>
               <p>{project.result}</p>
             </div>
@@ -136,7 +231,7 @@ export const ProjectDetails: React.FC = () => {
       {/* RELATED PROJECTS */}
       <section className="py-24 bg-surface border-y border-white/10">
         <div className="container mx-auto px-6">
-          <h2 className="text-4xl font-display font-bold mb-12 text-center">Projets Similaires</h2>
+          <h2 className="text-4xl font-display font-bold mb-12 text-center">Nos réalisations</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-12 max-w-5xl mx-auto">
             {projectsData.filter(p => p.id !== project.id).slice(0, 2).map(relatedProject => (
               <Link to={`/portfolio/${relatedProject.id}`} key={relatedProject.id} className="group block text-left">

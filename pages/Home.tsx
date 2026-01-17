@@ -31,6 +31,13 @@ export const Home: React.FC = () => {
         .animate-scroll {
           animation: scroll 40s linear infinite;
         }
+        .animate-scroll-reverse {
+          animation: scroll-reverse 60s linear infinite;
+        }
+        @keyframes scroll-reverse {
+          0% { transform: translateX(0); }
+          100% { transform: translateX(50%); }
+        }
         .delay-100 { animation-delay: 100ms; }
         .delay-200 { animation-delay: 200ms; }
         .delay-300 { animation-delay: 300ms; }
@@ -43,18 +50,18 @@ export const Home: React.FC = () => {
         
         {/* Left Side: Vertical Socials (Desktop Only) */}
         <div className="hidden lg:flex flex-col justify-center gap-32 items-center absolute left-0 top-0 bottom-0 w-24 z-30 border-r border-white/5 bg-background/50 backdrop-blur-sm">
-            <a href="https://www.facebook.com/equinox.cuisine" target="_blank" rel="noreferrer" className="text-[10px] font-bold tracking-[0.3em] text-white/40 hover:text-primary transition-colors -rotate-90 uppercase whitespace-nowrap">FACEBOOK</a>
-            <a href="https://www.linkedin.com/company/equinox-cuisine/" target="_blank" rel="noreferrer" className="text-[10px] font-bold tracking-[0.3em] text-white/40 hover:text-primary transition-colors -rotate-90 uppercase whitespace-nowrap">LINKEDIN</a>
-            <a href="https://www.instagram.com/equinox_cuisine" target="_blank" rel="noreferrer" className="text-[10px] font-bold tracking-[0.3em] text-white/40 hover:text-primary transition-colors -rotate-90 uppercase whitespace-nowrap">INSTAGRAM</a>
+            <a href="https://www.facebook.com/equinox.cuisine" target="_blank" rel="noreferrer" className="text-[10px] font-bold tracking-[0.3em] text-white/90 hover:text-primary transition-colors -rotate-90 uppercase whitespace-nowrap">FACEBOOK</a>
+            <a href="https://www.linkedin.com/company/equinox-cuisine/" target="_blank" rel="noreferrer" className="text-[10px] font-bold tracking-[0.3em] text-white/90 hover:text-primary transition-colors -rotate-90 uppercase whitespace-nowrap">LINKEDIN</a>
+            <a href="https://www.instagram.com/equinox_cuisine" target="_blank" rel="noreferrer" className="text-[10px] font-bold tracking-[0.3em] text-white/90 hover:text-primary transition-colors -rotate-90 uppercase whitespace-nowrap">INSTAGRAM</a>
         </div>
 
         {/* Right Side: Main Image (Desktop Only) */}
         <div className="absolute right-0 top-0 bottom-0 w-[55%] hidden lg:block z-0 pl-16 py-10">
-          <div className="h-full w-full bg-surfaceLight rounded-tl-[350px] rounded-bl-[350px] overflow-hidden relative shadow-2xl shadow-black/50 border-l border-y border-white/5">
+          <div className="h-full w-full bg-surfaceLight rounded-tl-[350px] rounded-bl-[350px] overflow-hidden relative shadow-2xl shadow-black/50 border-l border-y border-white/5 group">
             <img 
-              src="https://images.unsplash.com/photo-1556911220-e15b29be8c8f?q=80&w=2070&auto=format&fit=crop" 
+              src="equinox-hp-fourneau-molteni.png" 
               alt="Cuisine professionnelle inox" 
-              className="w-full h-full object-cover grayscale blur-[3px]"
+              className="w-full h-full object-cover grayscale blur-[2px] transition-all duration-700 ease-in-out hover:grayscale-0 hover:blur-0"
             />
             <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-transparent to-black/40 mix-blend-overlay pointer-events-none"></div>
           </div>
@@ -67,8 +74,8 @@ export const Home: React.FC = () => {
             {/* 1. Top Pill Image + Text */}
             <div className="flex flex-col md:flex-row items-start md:items-center gap-6 md:gap-8 mb-8 animate-up delay-100">
               {/* Image Pill */}
-              <div className="w-48 h-16 md:w-64 md:h-24 rounded-full overflow-hidden border border-white/20 shadow-lg shrink-0 relative group">
-                <img src="https://images.unsplash.com/photo-1541614101331-1a5a3a194e92?q=80&w=600&auto=format&fit=crop" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" alt="Detail" />
+              <div className="w-48 h-16 md:w-64 md:h-20 rounded-full overflow-hidden border border-white/20 shadow-lg shrink-0 relative group">
+                <img src="/equinox-hp-plan-conception.png" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" alt="Detail" />
                 <div className="absolute inset-0 bg-primary/20 mix-blend-overlay"></div>
               </div>
               {/* Text */}
@@ -82,7 +89,7 @@ export const Home: React.FC = () => {
               <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-display font-bold leading-[0.9] tracking-tighter uppercase mb-6 drop-shadow-2xl">
                 <span className="text-primary block relative z-10">L'EXCELLENCE</span>
                 <span className="text-white block relative z-10">TECHNIQUE</span>
-                <span className="text-white/60 block text-3xl md:text-5xl lg:text-6xl mt-2 tracking-normal normal-case font-light">
+                <span className="text-white/90 block text-3xl md:text-5xl lg:text-6xl mt-2 tracking-normal normal-case font-light">
                   au service de votre efficacité
                 </span>
                 
@@ -91,8 +98,8 @@ export const Home: React.FC = () => {
             </div>
 
             {/* 3. Second Pill Image */}
-            <div className="mb-10 w-40 h-14 md:w-52 md:h-20 rounded-full overflow-hidden border border-white/20 shadow-lg relative group animate-up delay-300">
-               <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?q=80&w=600&auto=format&fit=crop" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" alt="Detail 2" />
+            <div className="mb-10 w-48 h-16 md:w-64 md:h-20 rounded-full overflow-hidden border border-white/20 shadow-lg relative group animate-up delay-300">
+               <img src="/equinox-hp-cuisine.png" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" alt="Detail 2" />
                <div className="absolute inset-0 bg-primary/20 mix-blend-overlay"></div>
             </div>
 
@@ -117,11 +124,11 @@ export const Home: React.FC = () => {
         <div className="mt-16 lg:absolute lg:bottom-10 lg:left-60 z-30 px-6 lg:px-0 flex flex-col sm:flex-row gap-8 sm:gap-12 text-xs font-bold tracking-widest uppercase text-white/50 animate-up delay-500">
           <a href="mailto:contact@equinox.mc" className="hover:text-white transition-colors cursor-pointer group flex items-baseline gap-3">
             <span className="text-primary">E-MAIL</span>
-            <span className="border-b border-transparent group-hover:border-white transition-all">contact@equinox.mc</span>
+            <span className="text-white border-b border-transparent group-hover:border-white transition-all">contact@equinox.mc</span>
           </a>
           <a href="tel:+33493989339" className="hover:text-white transition-colors cursor-pointer group flex items-baseline gap-3">
             <span className="text-primary">TÉLÉPHONE</span>
-            <span className="border-b border-transparent group-hover:border-white transition-all">+33 4 93 98 93 39</span>
+            <span className="text-white border-b border-transparent group-hover:border-white transition-all">+33 4 93 98 93 39</span>
           </a>
         </div>
 
@@ -145,7 +152,7 @@ export const Home: React.FC = () => {
                  
                  {/* New Animated Bubble Button */}
                  <Link to="/contact" className="group relative inline-flex items-center h-16 w-full max-w-[250px] cursor-pointer">
-                    <span className="absolute left-0 h-16 w-16 bg-surfaceLight rounded-full transition-all duration-500 ease-in-out group-hover:w-full group-hover:bg-primary border border-white/5"></span>
+                    <span className="absolute left-0 h-16 w-16 bg-white/5 rounded-full transition-all duration-500 ease-in-out group-hover:w-full group-hover:bg-primary border border-white/5"></span>
                     <span className="relative z-10 pl-6 text-sm font-bold tracking-[0.2em] uppercase text-white transition-colors whitespace-nowrap">
                        Contactez nous
                     </span>
@@ -155,8 +162,8 @@ export const Home: React.FC = () => {
               {/* Right Column: Text Content (65%) */}
               <div className="md:w-[65%] flex flex-col justify-center pt-2 md:pt-0">
                  <div className="border-l border-white/10 pl-8 lg:pl-12">
-                    <h3 className="text-2xl font-display font-medium text-white mb-8 italic opacity-80">
-                      "Ce qui nous distingue : une exigence sans faille et une vision globale de votre métier."
+                    <h3 className="text-2xl font-display font-medium text-white mb-8 italic opacity-90">
+                      Ce qui nous distingue : une exigence sans faille et une vision globale de votre métier.
                     </h3>
                     <p className="text-textMuted text-lg leading-relaxed mb-8">
                       Depuis plus de 15 ans, nous accompagnons les professionnels de la restauration, de l’hôtellerie et des métiers de bouche sur toute la Côte d’Azur et à Monaco. Nous ne vendons pas seulement du matériel : nous concevons des outils de travail sur mesure.
@@ -176,8 +183,9 @@ export const Home: React.FC = () => {
 
       {/* Services Section (New Replacement) */}
       <section 
-        className="relative py-32 bg-surfaceLight overflow-visible border-t border-white/5"
+        className="relative py-32 bg-surface overflow-visible border-t border-white/5"
       >
+        <div className="absolute inset-0 bg-gradient-to-br from-surface via-surfaceLight to-background opacity-60 pointer-events-none"></div>
         {/* Vertical Lines Background (Exactly 3 lines) */}
         <div className="absolute inset-0 pointer-events-none">
           <div className="absolute left-1/4 top-0 bottom-0 w-px bg-white/5"></div>
@@ -261,7 +269,7 @@ export const Home: React.FC = () => {
           {/* New Bubble Button */}
           <div className="mt-24 text-center flex justify-center">
              <Link to="/services" className="group relative inline-flex items-center justify-start h-16 w-full max-w-xs cursor-pointer">
-                <span className="absolute left-1/2 -translate-x-1/2 h-16 w-16 bg-surfaceLight rounded-full transition-all duration-500 ease-in-out group-hover:w-full group-hover:bg-primary group-hover:translate-x-0 group-hover:left-0 border border-white/10"></span>
+                <span className="absolute left-1/2 -translate-x-1/2 h-16 w-16 bg-white/5 rounded-full transition-all duration-500 ease-in-out group-hover:w-full group-hover:bg-primary group-hover:translate-x-0 group-hover:left-0 border border-white/10"></span>
                 <span className="relative z-10 w-full text-center text-sm font-bold tracking-[0.2em] uppercase text-white transition-colors whitespace-nowrap">
                    Découvrez tous nos services
                 </span>
@@ -404,7 +412,7 @@ export const Home: React.FC = () => {
                  
                  {/* BUBBLE STYLE BUTTON REPLACEMENT */}
                  <Link to="/portfolio" className="hidden md:inline-flex group relative items-center h-16 w-full max-w-[320px] cursor-pointer">
-                    <span className="absolute left-0 h-16 w-16 bg-surfaceLight rounded-full transition-all duration-500 ease-in-out group-hover:w-full group-hover:bg-primary border border-white/5"></span>
+                    <span className="absolute left-0 h-16 w-16 bg-white/5 rounded-full transition-all duration-500 ease-in-out group-hover:w-full group-hover:bg-primary border border-white/5"></span>
                     <span className="relative z-10 pl-6 text-sm font-bold tracking-[0.2em] uppercase text-white transition-colors whitespace-nowrap">
                        Voir toutes nos réalisations
                     </span>
@@ -458,20 +466,20 @@ export const Home: React.FC = () => {
             <h5 className="text-center text-primary font-bold tracking-widest uppercase mb-12">Partenaires</h5>
         </div>
         
-        {/* Partners Slider - Pill Style */}
-        <div className="relative w-full overflow-hidden mb-24">
+          {/* Partners Slider - Pill Style */}
+          <div className="relative w-full overflow-hidden mb-24">
             <div className="flex w-[200%] animate-scroll">
-               {[...partners, ...partners, ...partners, ...partners].map((partner, i) => (
-                  <div key={i} className="flex-shrink-0 mx-4 w-[200px] h-[80px] md:w-[260px] md:h-[100px] rounded-full bg-surfaceLight border border-white/10 flex justify-center items-center px-8 hover:border-primary/30 transition-colors duration-300">
-                     <img 
-                       src={`https://placehold.co/300x100/1E1E1E/FFFFFF/png?text=${partner}`} 
-                       alt={partner} 
-                       className="w-full h-full object-contain opacity-50 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-300"
-                     />
-                  </div>
-               ))}
+              {[...partners, ...partners, ...partners, ...partners].map((partner, i) => (
+                <div key={i} className="flex-shrink-0 mx-4 w-[200px] h-[80px] md:w-[260px] md:h-[100px] rounded-full bg-surfaceLight border border-white/10 flex justify-center items-center px-8 hover:border-primary/30 transition-colors duration-300">
+                  <img 
+                    src={`https://placehold.co/300x100/1E1E1E/FFFFFF/png?text=${partner}`} 
+                    alt={partner} 
+                    className="w-full h-full object-contain opacity-50 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-300"
+                  />
+                </div>
+              ))}
             </div>
-        </div>
+          </div>
 
         <div className="container mx-auto px-6 mb-12">
             <h5 className="text-center text-primary font-bold tracking-widest uppercase mb-12">Ils nous font confiance</h5>
@@ -479,7 +487,7 @@ export const Home: React.FC = () => {
         
         {/* Trust Slider - Pill Style */}
         <div className="relative w-full overflow-hidden">
-             <div className="flex w-[400%] animate-scroll" style={{ animationDuration: '60s' }}>
+             <div className="flex w-[400%] animate-scroll">
                {[...clients, ...clients].map((client, i) => (
                   <div key={i} className="flex-shrink-0 mx-4 w-[200px] h-[80px] md:w-[260px] md:h-[100px] rounded-full bg-surfaceLight border border-white/10 flex justify-center items-center px-6 hover:border-primary/30 transition-colors duration-300">
                       <img 
@@ -512,7 +520,7 @@ export const Home: React.FC = () => {
           </p>
           
           <Link to="/contact" className="group relative inline-flex items-center h-20 w-full max-w-[280px] cursor-pointer mx-auto">
-            <span className="absolute left-0 h-20 w-20 bg-surfaceLight rounded-full transition-all duration-500 ease-in-out group-hover:w-full group-hover:bg-primary border border-white/10 shadow-xl"></span>
+            <span className="absolute left-0 h-20 w-20 bg-white/5 rounded-full transition-all duration-500 ease-in-out group-hover:w-full group-hover:bg-primary border border-white/10 shadow-xl"></span>
             <span className="relative z-10 pl-8 w-full text-center pr-8 text-sm font-bold tracking-[0.2em] uppercase text-white transition-colors whitespace-nowrap flex items-center justify-center gap-4">
                Contactez-nous
             </span>

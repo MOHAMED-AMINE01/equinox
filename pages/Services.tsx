@@ -146,7 +146,7 @@ export const Services: React.FC = () => {
                 {/* Animated Bubble CTA */}
                 <div className="mt-12">
                    <Link to="/contact" className="group relative inline-flex items-center h-16 w-full max-w-[320px] cursor-pointer">
-                      <span className="absolute left-0 h-16 w-16 bg-white/10 rounded-full transition-all duration-500 ease-in-out group-hover:w-full group-hover:bg-primary border border-white/5"></span>
+                      <span className="absolute left-0 h-16 w-16 bg-white/5 rounded-full transition-all duration-500 ease-in-out group-hover:w-full group-hover:bg-primary border border-white/5"></span>
                       <span className="relative z-10 pl-6 text-sm font-bold tracking-[0.2em] uppercase text-white transition-colors whitespace-nowrap">
                          Parlez-nous de votre projet
                       </span>

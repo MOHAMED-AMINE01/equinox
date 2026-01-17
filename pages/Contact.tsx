@@ -40,7 +40,7 @@ export const Contact: React.FC = () => {
                Contacts
             </h1>
             <div className="flex items-center justify-center gap-6 text-xs font-bold tracking-[0.2em] text-textMuted uppercase">
-               <Link to="/" className="hover:text-primary transition-colors">Home</Link>
+               <Link to="/" className="hover:text-primary transition-colors">Accueil</Link>
                <span className="w-12 h-[1px] bg-primary"></span>
                <span className="text-white">Contacts</span>
             </div>
@@ -132,7 +132,7 @@ export const Contact: React.FC = () => {
                   {/* Submit Button - Bubble Style */}
                   <div className="pt-8">
                      <button type="submit" className="group relative inline-flex items-center justify-start h-16 w-40 cursor-pointer bg-transparent border-none p-0 focus:outline-none">
-                        <span className="absolute left-0 h-16 w-16 bg-[#222] rounded-full transition-all duration-500 ease-in-out group-hover:w-full group-hover:bg-primary border border-white/10 shadow-lg"></span>
+                        <span className="absolute left-0 h-16 w-16 bg-white/5 rounded-full transition-all duration-500 ease-in-out group-hover:w-full group-hover:bg-primary border border-white/10 shadow-lg"></span>
                         <span className="relative z-10 pl-6 text-sm font-bold tracking-[0.2em] uppercase text-white transition-colors whitespace-nowrap">
                            Envoyer
                         </span>

@@ -42,9 +42,9 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) =>
           {/* LEFT: Logo */}
           <Link to="/" className="flex items-center gap-3 group shrink-0">
             <img
-              src="/logo.png"
+              src="/EQUINOX-LOGO_1-Blanc.png"
               alt="EQUINOX Logo"
-              className="h-16 w-auto object-contain brightness-0 invert"
+              className="h-16 w-auto object-contain"
             />
           </Link>
 
@@ -115,7 +115,7 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) =>
       </main>
 
       {/* Footer */}
-      <footer className="bg-black text-white pt-24 pb-12 relative z-10 overflow-hidden">
+      <footer className="bg-surface text-white pt-24 pb-12 relative z-10 overflow-hidden">
         {/* Blue Glow Effect */}
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-[800px] h-[300px] bg-primary/10 blur-[100px] rounded-full pointer-events-none -translate-y-1/2"></div>
         {/* Top Gradient Border */}
@@ -128,9 +128,9 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) =>
             <div className="lg:col-span-4 flex flex-col items-center text-center md:items-start md:text-left">
               <Link to="/" className="inline-block mb-8">
                 <img
-                  src="/logo.png"
+                  src="/EQUINOX-LOGO_2-Blanc.png"
                   alt="EQUINOX"
-                  className="h-16 w-auto object-contain brightness-0 invert"
+                  className="h-24 w-auto object-contain"
                 />
               </Link>
               <p className="text-textMuted leading-relaxed max-w-sm">

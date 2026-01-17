@@ -67,9 +67,10 @@ export const Portfolio: React.FC = () => {
                   {/* Large Centered Arrow Icon */}
                   <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
                     <img 
-                      src="https://wgl-dsites.net/bili/wp-content/uploads/2022/03/arrow_infobox.png"
+                      /* src="https://wgl-dsites.net/bili/wp-content/uploads/2022/03/arrow_infobox.png" */
+                      src="/EQUINOX-LOGO_monogramme_B.png"
                       alt="Voir le projet"
-                      className="w-24 h-24 md:w-32 md:h-32 opacity-0 group-hover:opacity-100 transform scale-50 group-hover:scale-100 transition-all duration-500 ease-out"
+                      className="w-32 h-32 md:w-48 md:h-48 opacity-0 group-hover:opacity-100 transform scale-50 group-hover:scale-100 transition-all duration-500 ease-out"
                     />
                   </div>
                 </div>
