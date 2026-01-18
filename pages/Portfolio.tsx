@@ -38,7 +38,7 @@ export const Portfolio: React.FC = () => {
       <section className="py-24">
         <div className="container mx-auto px-6">
           {/* Filters */}
-          <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-4 mb-16">
+          {/* <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-4 mb-16">
             {categories.map(category => (
               <button
                 key={category}
@@ -49,7 +49,7 @@ export const Portfolio: React.FC = () => {
                 <span className={`absolute -bottom-2 left-0 w-full h-0.5 bg-primary transition-transform duration-300 scale-x-0 group-hover:scale-x-100 ${activeCategory === category ? 'scale-x-100' : ''}`}></span>
               </button>
             ))}
-          </div>
+          </div> */}
 
           {/* Project Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-12">

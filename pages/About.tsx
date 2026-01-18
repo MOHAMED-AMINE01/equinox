@@ -44,7 +44,7 @@ export const About: React.FC = () => {
                  <img src="https://images.unsplash.com/photo-1577106263724-2c8e03bfe9cf?q=80&w=2000&auto=format&fit=crop" alt="Team Equinox" className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700" />
                </div>
                {/* Decorative elements */}
-               <div className="absolute -bottom-10 -right-10 w-2/3 h-2/3 border border-primary/30 -z-0 hidden md:block"></div>
+               {/* <div className="absolute -bottom-10 -right-10 w-2/3 h-2/3 border border-primary/30 -z-0 hidden md:block"></div> */}
             </div>
             
             <div className="lg:w-1/2">
@@ -76,9 +76,9 @@ export const About: React.FC = () => {
       <section className="py-16 md:py-24 bg-background border-y border-white/5 relative overflow-hidden">
          {/* Vertical Lines Background */}
          <div className="absolute inset-0 pointer-events-none z-0">
-            <div className="absolute left-1/4 top-0 bottom-0 w-px bg-white/5"></div>
-            <div className="absolute left-1/2 top-0 bottom-0 w-px bg-white/5"></div>
-            <div className="absolute left-3/4 top-0 bottom-0 w-px bg-white/5"></div>
+            {/* <div className="absolute left-1/4 top-0 bottom-0 w-px bg-white/5"></div> */}
+            <div className="absolute lg:left-1/2 lg:top-0 lg:bottom-0 lg:w-px lg:bg-white/5"></div>
+            {/* <div className="absolute left-3/4 top-0 bottom-0 w-px bg-white/5"></div> */}
          </div>
 
          <div className="container mx-auto px-6 relative z-10">

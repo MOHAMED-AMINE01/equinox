@@ -81,7 +81,7 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) =>
             {/* Mobile Burger Button */}
             <button
               className={`lg:hidden w-12 h-12 rounded-full flex items-center justify-center transition-all duration-300 
-                  ${isMenuOpen ? 'bg-primary text-white' : 'bg-surfaceLight text-white hover:bg-white hover:text-black'}`}
+                  ${isMenuOpen ? 'bg-primary text-white' : 'bg-white/5 text-white hover:bg-white hover:text-black'}`}
               onClick={() => setIsMenuOpen(!isMenuOpen)}
             >
               {isMenuOpen ? <X size={20} /> : <Menu size={20} />}
@@ -130,7 +130,7 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) =>
                 <img
                   src="/EQUINOX-LOGO_2-Blanc.png"
                   alt="EQUINOX"
-                  className="h-24 w-auto object-contain"
+                  className="h-32 w-auto object-contain"
                 />
               </Link>
               <p className="text-textMuted leading-relaxed max-w-sm">
@@ -141,7 +141,7 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) =>
             {/* Column 2: Navigation (2 cols) - NEW HOVER EFFECT */}
             <div className="lg:col-span-2 lg:col-start-6 flex flex-col items-center text-center md:items-start md:text-left">
               <h4 className="text-white font-bold text-lg mb-8">Navigation</h4>
-              <ul className="space-y-4">
+              <ul className="space-y-6">
                 {[
                   { name: 'Services', path: '/services' },
                   { name: 'Réalisations', path: '/portfolio' },
@@ -170,11 +170,11 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) =>
               <ul className="space-y-6">
                 <li>
                   <span className="block text-xs uppercase tracking-widest text-textMuted mb-1">Tél.</span>
-                  <a href="tel:+33493989339" className="text-xl font-medium text-white hover:text-primary transition-colors">+33 4 93 98 93 39</a>
+                  <a href="tel:+33493989339" className="text-textMuted font-medium text-white hover:text-primary transition-colors">+33 4 93 98 93 39</a>
                 </li>
                 <li>
                   <span className="block text-xs uppercase tracking-widest text-textMuted mb-1">Email</span>
-                  <a href="mailto:contact@equinox.mc" className="text-xl font-medium text-white hover:text-primary transition-colors">contact@equinox.mc</a>
+                  <a href="mailto:contact@equinox.mc" className="text-textMuted font-medium text-white hover:text-primary transition-colors">contact@equinox.mc</a>
                 </li>
               </ul>
             </div>

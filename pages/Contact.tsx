@@ -1,21 +1,37 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { Mail, MapPin, Phone, Instagram, Facebook, Linkedin, ArrowRight, Check, Loader2 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
-export const Contact: React.FC = () => {
-  const [captchaVerified, setCaptchaVerified] = useState(false);
-  const [captchaLoading, setCaptchaLoading] = useState(false);
 
-  const handleCaptchaClick = () => {
-    if (!captchaVerified && !captchaLoading) {
-      setCaptchaLoading(true);
-      // Simulate network verification
+export const Contact: React.FC = () => {
+   const [captchaVerified, setCaptchaVerified] = useState(false);
+   const [captchaLoading, setCaptchaLoading] = useState(false);
+   const [activeMap, setActiveMap] = useState<'fr' | 'mc' | null>(null);
+   const mapFrRef = useRef<HTMLDivElement>(null);
+   const mapMcRef = useRef<HTMLDivElement>(null);
+
+   const handleCaptchaClick = () => {
+      if (!captchaVerified && !captchaLoading) {
+         setCaptchaLoading(true);
+         // Simulate network verification
+         setTimeout(() => {
+            setCaptchaLoading(false);
+            setCaptchaVerified(true);
+         }, 1500);
+      }
+   };
+
+   const scrollToMap = (type: 'fr' | 'mc') => {
+      setActiveMap(type);
       setTimeout(() => {
-        setCaptchaLoading(false);
-        setCaptchaVerified(true);
-      }, 1500);
-    }
-  };
+         if (type === 'fr' && mapFrRef.current) {
+            mapFrRef.current.scrollIntoView({ behavior: 'smooth', block: 'center' });
+         } else if (type === 'mc' && mapMcRef.current) {
+            mapMcRef.current.scrollIntoView({ behavior: 'smooth', block: 'center' });
+         }
+      }, 100);
+      setTimeout(() => setActiveMap(null), 2000); // Remove highlight after 2s
+   };
 
   return (
     <div className="bg-background min-h-screen text-white">
@@ -37,7 +53,7 @@ export const Contact: React.FC = () => {
          {/* Hero Text Content */}
          <div className="relative z-10 text-center animate-up">
             <h1 className="text-5xl md:text-7xl font-display font-bold uppercase tracking-tight mb-8 drop-shadow-2xl text-white">
-               Contacts
+               Contactez-nous
             </h1>
             <div className="flex items-center justify-center gap-6 text-xs font-bold tracking-[0.2em] text-textMuted uppercase">
                <Link to="/" className="hover:text-primary transition-colors">Accueil</Link>
@@ -154,22 +170,38 @@ export const Contact: React.FC = () => {
                Contactez-nous pour discuter des besoins de votre établissement dès aujourd'hui. Appelez-nous ou envoyez-nous un email.
              </p>
 
-             <div className="space-y-12">
-                <div className="flex flex-col gap-2 relative pl-8 border-l border-white/10">
-                   <span className="text-xs font-bold uppercase tracking-widest text-textMuted">Adresse</span>
-                   <p className="text-xl md:text-2xl text-white font-medium">302 Boulevard du Mercantour <br/> 06200 NICE</p>
-                </div>
 
+             <div className="space-y-12">
+                {/* Téléphone */}
                 <div className="flex flex-col gap-2 relative pl-8 border-l border-white/10">
-                   <span className="text-xs font-bold uppercase tracking-widest text-textMuted">Téléphone</span>
+                   <span className="text-xs font-bold uppercase tracking-widest text-textMuted">Tél</span>
                    <div className="flex flex-col gap-1">
                       <a href="tel:0493989339" className="text-xl md:text-2xl text-white hover:text-primary transition-colors font-medium">04 93 98 93 39</a>
                    </div>
                 </div>
 
+                {/* Email */}
                 <div className="flex flex-col gap-2 relative pl-8 border-l border-white/10">
-                   <span className="text-xs font-bold uppercase tracking-widest text-textMuted">Email</span>
+                   <span className="text-xs font-bold uppercase tracking-widest text-textMuted">Mail</span>
                    <a href="mailto:contact@equinox.mc" className="text-xl md:text-2xl text-white hover:text-primary transition-colors font-medium break-all">contact@equinox.mc</a>
+                </div>
+
+                {/* Adresse France */}
+                <div
+                  className="flex flex-col gap-2 relative pl-8 border-l border-white/10 cursor-pointer group"
+                  onClick={() => scrollToMap('fr')}
+                >
+                   <span className="text-xs font-bold uppercase tracking-widest text-textMuted">ADRESSE FRANCE</span>
+                   <p className="text-xl md:text-2xl text-white hover:text-primary transition-colors font-medium">302 Boulevard du Mercantour <br/> 06200 NICE</p>
+                </div>
+
+                {/* Adresse Monaco */}
+                <div
+                  className="flex flex-col gap-2 relative pl-8 border-l border-white/10 cursor-pointer group"
+                  onClick={() => scrollToMap('mc')}
+                >
+                   <span className="text-xs font-bold uppercase tracking-widest text-textMuted">ADRESSE MONACO</span>
+                   <p className="text-xl md:text-2xl text-white hover:text-primary transition-colors font-medium">5 Rue Louis NOTARI, Le Jean-Luc<br/>98000 MONACO</p>
                 </div>
              </div>
 
@@ -189,19 +221,46 @@ export const Contact: React.FC = () => {
         </div>
       </div>
 
-      {/* MAP SECTION - Full Width Grayscale - Fully Interactive */}
-      <div className="w-full h-[50vh] min-h-[400px] bg-[#f0f0f0] relative overflow-hidden border-t border-white/10">
-         <iframe 
-           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2884.2588691530933!2d7.199018076652233!3d43.70514197110007!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12cdd1b3b063857d%3A0x40819a5fd979c320!2s302%20Bd%20du%20Mercantour%2C%2006200%20Nice!5e0!3m2!1sen!2sfr!4v1710345600000!5m2!1sen!2sfr" 
-           width="100%" 
-           height="100%" 
-           style={{ border: 0, filter: 'grayscale(100%)' }} 
-           allowFullScreen 
-           loading="lazy" 
-           referrerPolicy="no-referrer-when-downgrade"
-           title="Equinox Location"
-         ></iframe>
-      </div>
+
+         {/* MAP SECTION - Two Maps Side by Side on Desktop */}
+         <div className="w-full min-h-[400px] bg-background relative overflow-hidden border-t border-white/5 py-8">
+            <div className="flex flex-col lg:flex-row gap-8 h-[50vh] min-h-[400px] justify-center items-stretch">
+               {/* France Map */}
+               <div
+                  ref={mapFrRef}
+                  className={`flex-1 bg-white/10 rounded-2xl overflow-hidden shadow-lg transition-all border-4 ${activeMap === 'fr' ? 'border-primary' : 'border-transparent'}`}
+                  style={{ minWidth: 0 }}
+               >
+                  <iframe
+                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2884.2588691530933!2d7.199018076652233!3d43.70514197110007!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12cdd1b3b063857d%3A0x40819a5fd979c320!2s302%20Bd%20du%20Mercantour%2C%2006200%20Nice!5e0!3m2!1sen!2sfr!4v1710345600000!5m2!1sen!2sfr"
+                     width="100%"
+                     height="100%"
+                     style={{ border: 0, filter: 'grayscale(100%)', minHeight: 350 }}
+                     allowFullScreen
+                     loading="lazy"
+                     referrerPolicy="no-referrer-when-downgrade"
+                     title="Equinox France Location"
+                  ></iframe>
+               </div>
+               {/* Monaco Map */}
+               <div
+                  ref={mapMcRef}
+                  className={`flex-1 bg-white/10 rounded-2xl overflow-hidden shadow-lg transition-all border-4 ${activeMap === 'mc' ? 'border-primary' : 'border-transparent'}`}
+                  style={{ minWidth: 0 }}
+               >
+                  <iframe
+                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2880.073964479836!2d7.419897315601839!3d43.73499397911809!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12cdc29e7e2e7e2b%3A0x2a2b2b2b2b2b2b2b!2s5%20Rue%20Louis%20Notari%2C%2098000%20Monaco!5e0!3m2!1sfr!2sfr!4v1710345600001!5m2!1sfr!2sfr"
+                     width="100%"
+                     height="100%"
+                     style={{ border: 0, filter: 'grayscale(100%)', minHeight: 350 }}
+                     allowFullScreen
+                     loading="lazy"
+                     referrerPolicy="no-referrer-when-downgrade"
+                     title="Equinox Monaco Location"
+                  ></iframe>
+               </div>
+            </div>
+         </div>
 
     </div>
   );

@@ -1,3 +1,128 @@
+// Desktop gallery carousel: auto-shifts images every 2s (desktop only)
+
+// Pour afficher les détails, on suppose que chaque image est un objet { src, title?, description? }
+
+
+function DesktopGalleryCarousel({ images }: { images: (string | { src: string })[] }) {
+  // Normalisation pour supporter string[] ou objet[]
+  const normalized = images.map(img => typeof img === 'string' ? { src: img } : img);
+  const [order, setOrder] = React.useState<number[]>(normalized.map((_, i) => i));
+  const [modalIdx, setModalIdx] = React.useState<number|null>(null);
+  const [zoom, setZoom] = React.useState(false);
+
+  React.useEffect(() => {
+    const media = window.matchMedia('(min-width: 1024px)');
+    // Sur desktop, toujours activer l'auto-slide
+    if (media.matches) {
+      const interval = setInterval(() => {
+        setOrder((prev) => {
+          if (prev.length <= 1) return prev;
+          return [...prev.slice(1), prev[0]];
+        });
+      }, 2000);
+      return () => clearInterval(interval);
+    }
+    // Sur mobile, désactiver l'auto-slide si modal ouvert
+    if (!media.matches && modalIdx === null) {
+      const interval = setInterval(() => {
+        setOrder((prev) => {
+          if (prev.length <= 1) return prev;
+          return [...prev.slice(1), prev[0]];
+        });
+      }, 2000);
+      return () => clearInterval(interval);
+    }
+    // Sinon, ne rien faire (pas d'auto-slide)
+    return undefined;
+  }, [normalized.length, modalIdx]);
+
+  const handlePrev = (e?: React.MouseEvent) => {
+    if (e) e.stopPropagation();
+    setModalIdx(idx => {
+      if (idx === null) return null;
+      return (idx - 1 + normalized.length) % normalized.length;
+    });
+  };
+  const handleNext = (e?: React.MouseEvent) => {
+    if (e) e.stopPropagation();
+    setModalIdx(idx => {
+      if (idx === null) return null;
+      return (idx + 1) % normalized.length;
+    });
+  };
+
+  return (
+    <>
+      <div className="hidden lg:flex images-row pt-4 w-full lg:col-span-12">
+        {order.slice(0, 3).map((imgIdx) => (
+          <img
+            key={imgIdx}
+            src={normalized[imgIdx].src}
+            alt={`Gallery image ${imgIdx + 1}`}
+            className="gallery-img cursor-pointer"
+            onClick={() => { setModalIdx(imgIdx); setZoom(false); }}
+          />
+        ))}
+      </div>
+      {modalIdx !== null && (
+        <div
+          className="fixed inset-0 bg-black/90 flex items-center justify-center z-50"
+          onClick={() => setModalIdx(null)}
+        >
+          {/* Compteur en haut à gauche */}
+          <div className="absolute top-4 left-4 text-white text-lg font-mono bg-black/60 rounded px-3 py-1 select-none">
+            {modalIdx + 1} / {normalized.length}
+          </div>
+          {/* Bouton fermer en haut à droite */}
+          <button
+            className="absolute top-4 right-4 text-white bg-black/60 rounded-full p-2 hover:bg-black/90 text-2xl"
+            onClick={e => { e.stopPropagation(); setModalIdx(null); }}
+            aria-label="Fermer"
+          >
+            &times;
+          </button>
+          {/* Image centrée, zoomable, flèches parfaitement alignées */}
+          <div className="flex-1 flex items-center justify-center w-full">
+            <div className="relative flex items-center justify-center">
+              {/* Flèche gauche style Elementor */}
+              <button
+                className="elementor-swiper-button elementor-swiper-button-prev elementor-lightbox-prevent-close absolute left-0 top-1/2 -translate-y-1/2 z-10"
+                style={{ transform: 'translate(-100%, -50%)', left: '-150px', width: 40, height: 40, background: '#fff', color: '#222', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', boxShadow: '0 2px 8px rgba(0,0,0,0.15)', fontSize: 24, border: 'none', cursor: 'pointer' }}
+                onClick={e => { e.stopPropagation(); handlePrev(); }}
+                aria-label="Précédent"
+              >
+                <span aria-hidden="true">&#10094;</span>
+              </button>
+              <img
+                src={normalized[modalIdx].src}
+                alt={`Gallery image ${modalIdx + 1}`}
+                className={zoom ? "w-full max-h-[90vh] object-contain rounded-lg shadow-2xl scale-150 transition-transform duration-300" : "w-full max-h-[80vh] object-contain rounded-lg shadow-2xl transition-transform duration-300"}
+                style={{ cursor: zoom ? 'zoom-out' : 'zoom-in', maxWidth: '80vw', maxHeight: '80vh' }}
+                onClick={e => { e.stopPropagation(); setZoom(z => !z); }}
+              />
+              {/* Flèche droite style Elementor */}
+              <button
+                className="elementor-swiper-button elementor-swiper-button-next elementor-lightbox-prevent-close absolute right-0 top-1/2 -translate-y-1/2 z-10"
+                style={{ transform: 'translate(100%, -50%)', right: '-150px', width: 40, height: 40, background: '#fff', color: '#222', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', boxShadow: '0 2px 8px rgba(0,0,0,0.15)', fontSize: 24, border: 'none', cursor: 'pointer' }}
+                onClick={e => { e.stopPropagation(); handleNext(); }}
+                aria-label="Suivant"
+              >
+                <span aria-hidden="true">&#10095;</span>
+              </button>
+              
+            </div>
+          </div>
+        </div>
+      )}
+    </>
+  );
+}
+import React, { FC, useState, useEffect } from 'react';
+import './ProjectDetails.css';
+import { useParams, Link, useNavigate } from 'react-router-dom';
+import { projectsData } from '../data/projects';
+import { ArrowLeft, ArrowRight, CheckCircle } from 'lucide-react';
+
 // Carousel component with modal and navigation arrows
 const Carousel: React.FC<{ images: string[] }> = ({ images }) => {
   const [current, setCurrent] = React.useState(0);
@@ -92,10 +217,6 @@ const Carousel: React.FC<{ images: string[] }> = ({ images }) => {
     </>
   );
 };
-import React, { FC, useState, useEffect } from 'react';
-import { useParams, Link, useNavigate } from 'react-router-dom';
-import { projectsData } from '../data/projects';
-import { ArrowLeft, ArrowRight, CheckCircle } from 'lucide-react';
 
 export const ProjectDetails: React.FC = () => {
   const { id } = useParams<{ id: string }>();
@@ -119,7 +240,6 @@ export const ProjectDetails: React.FC = () => {
   const nextProject = currentProjectIndex < projectsData.length - 1 ? projectsData[currentProjectIndex + 1] : null;
 
   const projectInfo = [
-    { label: 'Catégorie', value: project.category },
     { label: 'Lieu', value: project.location },
     { label: 'Année', value: project.year },
     { label: 'Client', value: project.title },
@@ -143,9 +263,8 @@ export const ProjectDetails: React.FC = () => {
         <div className="absolute inset-0 bg-gradient-to-t from-background via-background/70 to-transparent"></div>
         <div className="container mx-auto px-6 relative z-10 pb-12">
           <div className="flex items-center gap-6 text-xs font-bold tracking-[0.2em] text-textMuted uppercase mb-4">
-            <Link to="/portfolio" className="hover:text-primary transition-colors">Réalisations</Link>
             <span className="w-8 h-[1px] bg-primary"></span>
-            <span className="">{project.category}</span>
+            <Link to="/portfolio" className="hover:text-primary transition-colors">Réalisations</Link>
           </div>
           <h1 className="text-5xl md:text-7xl font-display font-bold uppercase tracking-tight text-white drop-shadow-2xl">
             {project.title}
@@ -186,12 +305,20 @@ export const ProjectDetails: React.FC = () => {
               <div className="flex-1">
                 <p className="text-xl text-white italic">{project.challenge}</p>
               </div>
-              {project.gallery && (
-                <div className="pt-4 lg:w-[35%] min-w-[180px] max-w-[500px] flex-shrink-0">
+            </div>
+            {project.gallery && (
+              <>
+                {/* For mobile view */}
+                <div className="pt-4 lg:hidden min-w-[180px] max-w-[500px]">
                   <Carousel images={project.gallery} />
                 </div>
-              )}
-            </div>
+                {/* For desktop view - images in one row, full width, auto-shifting */}
+                <DesktopGalleryCarousel images={project.gallery} />
+              </>
+            )}
+
+
+
           </div>
 
           {/* Section 02: Solution */}
@@ -239,7 +366,6 @@ export const ProjectDetails: React.FC = () => {
                   <img src={relatedProject.image} alt={relatedProject.title} className="w-full h-auto object-cover aspect-[4/3] transition-transform duration-500 ease-in-out group-hover:scale-110" />
                 </div>
                 <div>
-                  <p className="text-primary text-xs font-bold tracking-widest uppercase mb-2">{relatedProject.category}</p>
                   <h3 className="text-3xl font-display font-bold text-white group-hover:text-primary transition-colors duration-300">{relatedProject.title}</h3>
                 </div>
               </Link>

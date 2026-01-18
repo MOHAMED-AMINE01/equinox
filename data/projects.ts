@@ -9,11 +9,11 @@ export const projectsData: Project[] = [
     year: '2024',
     image: 'https://images.unsplash.com/photo-1578985545062-69928b1d9587?q=80&w=1989&auto=format&fit=crop',
     gallery: [
-      '/EQUINOX-CUISINE_patisserie-tayac-monaco-03.jpg',
-      '/EQUINOX-CUISINE_patisserie-tayac-monaco-05.jpg',
-      '/EQUINOX-CUISINE_patisserie-tayac-monaco-10.jpg',
-      '/EQUINOX-CUISINE_patisserie-tayac-monaco-01.jpg',
-      '/EQUINOX-CUISINE_patisserie-tayac-monaco-12.jpg'
+      '/tayac/EQUINOX-CUISINE_patisserie-tayac-monaco-03.jpg',
+      '/tayac/EQUINOX-CUISINE_patisserie-tayac-monaco-05.jpg',
+      '/tayac/EQUINOX-CUISINE_patisserie-tayac-monaco-10.jpg',
+      '/tayac/EQUINOX-CUISINE_patisserie-tayac-monaco-01.jpg',
+      '/tayac/EQUINOX-CUISINE_patisserie-tayac-monaco-12.jpg'
     ],
     challenge: 'Implanté au cœur du Carré d’Or de Monaco, le nouveau salon-boutique du Chef Pâtissier Philippe Tayac devait incarner l’aboutissement d’un parcours d’excellence. L’enjeu était double : concevoir un espace parfaitement fonctionnel dans un environnement contraint, tout en offrant une mise en scène spectaculaire des créations pâtissières, à la hauteur d’une adresse pensée comme une bijouterie.',
     solution: {
@@ -34,8 +34,12 @@ export const projectsData: Project[] = [
     year: '2024',
     image: 'https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?q=80&w=1981&auto=format&fit=crop',
     gallery: [
-      'https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?q=80&w=800&auto=format&fit=crop',
-      'https://images.unsplash.com/photo-1551218808-94e220e084d2?q=80&w=800&auto=format&fit=crop'
+      'bagnard/EQUINOX-CUISINE_restaurant-bagnard-aeroport.jpg',
+      'bagnard/EQUINOX-CUISINE_vitrine-refrigeree.jpg',
+      'bagnard/EQUINOX-CUISINE_meubles-froid.jpg',
+      'bagnard/EQUINOX-CUISINE_restaurant-saladette.jpg',
+      'bagnard/EQUINOX-CUISINE_restaurant-meubles-inox.jpg',
+      'bagnard/EQUINOX-CUISINE_restaurant-bagnard-nice.jpg'
     ],
     challenge: 'Au cœur du Terminal 2 de l’aéroport de Nice, BAGNARD signe une escale gourmande. Le défi : concevoir une cuisine professionnelle sur mesure capable de délivrer une offre fraîche, qualitative et rythmée, dans un flux continu de voyageurs et avec des impératifs stricts en matière d’hygiène, de sécurité et de temps de service.',
     solution: {
@@ -57,8 +61,13 @@ export const projectsData: Project[] = [
     year: '2023',
     image: 'https://images.unsplash.com/photo-1506377247377-2a5b3b417ebb?q=80&w=2070&auto=format&fit=crop',
     gallery: [
-      'https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?q=80&w=800&auto=format&fit=crop',
-      'https://images.unsplash.com/photo-1528975604071-b4dc52a2d18c?q=80&w=800&auto=format&fit=crop'
+      'mapliers/EQUINOX-CUISINE_domaine-des-mappliers.jpg',
+      'mapliers/EQUINOX-CUISINE_bar-degustation.jpg',
+      'mapliers/EQUINOX-CUISINE_gamko.jpg',
+      'mapliers/EQUINOX-CUISINE_domaine-mappliers-ombra.jpg',
+      'mapliers/EQUINOX-CUISINE_gamko-bar.jpg',
+      'mapliers/EQUINOX-CUISINE_cave-vin.jpg',
+      'mapliers/EQUINOX-CUISINE_domaine-des-mappliers-lorgue.jpg'
     ],
     challenge: 'Au cœur de la Provence varoise, le Domaine des Mapliers incarne une vision raffinée du vignoble. L’enjeu était de créer un espace technique parfaitement fonctionnel pour le service des vins et des boissons, tout en respectant l’esthétique chaleureuse et haut de gamme du domaine.',
     solution: {
@@ -73,14 +82,24 @@ export const projectsData: Project[] = [
   },
   {
     id: 4,
-    title: 'Villa La Madone',
+    title: 'VILLA LA MADONE',
     category: 'Résidentiel',
     location: 'Côte d’Azur',
     year: '2025',
-    image: 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=1980&auto=format&fit=crop',
+    image: 'madone/EQUINOX-CUISINE_fourneau-molteni-nice.jpg',
     gallery: [
-      'https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=800&auto=format&fit=crop',
-      'https://images.unsplash.com/photo-1465101046530-73398c7f28ca?q=80&w=800&auto=format&fit=crop'
+      'madone/EQUINOX-CUISINE_fourneau-molteni-monaco.jpg',
+      'madone/EQUINOX-CUISINE_inox-mat-marbre.jpg',
+      'madone/EQUINOX-CUISINE_fourneau-molteni.jpg',
+      'madone/EQUINOX-CUISINE_molteni.jpg',
+      'madone/EQUINOX-CUISINE_villa-madone.jpg',
+      'madone/EQUINOX-CUISINE_villa-premium-marbre.jpg',
+      'madone/EQUINOX-CUISINE_colonne-froid.jpg',
+      'madone/EQUINOX-CUISINE_colonne-froid-inox-poli-vibre-mat.jpg',
+      'madone/EQUINOX-CUISINE_villa-luxe-bar.jpg',
+      'madone/EQUINOX-CUISINE_bar-inox.jpg',
+      'madone/EQUINOX-CUISINE_villa-bar-sur-mesure.jpg',
+      'madone/EQUINOX-CUISINE_exterieure-bbq.jpg'
     ],
     challenge: `Surplombant la Méditerranée, Villa La Madone incarne une expression singulière de l'art de vivre : un lieu pensé comme une ode à la lumière, aux lignes épurées et aux horizons infinis, où l'élégance contemporaine dialogue avec un confort intemporel.\n\nDans le cadre d'une rénovation d'envergure, le défi était de concevoir et d'intégrer une cuisine professionnelle haut de gamme, capable de répondre aux exigences d'un service d'exception, tout en préservant l'âme des lieux. L'enjeu technique consistait notamment à remettre en état et à réintégrer le fourneau Molteni existant, véritable pièce maîtresse à conserver, symbole de savoir-faire et de caractère, tout en créant un environnement cohérent, fluide et esthétiquement irréprochable.`,
     solution: {
@@ -96,14 +115,17 @@ export const projectsData: Project[] = [
   },
   {
     id: 5,
-    title: 'Moshi Moshi',
+    title: 'MOSHI MOSHI',
     category: 'Restauration',
     location: 'Monaco',
     year: '2025',
     image: 'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?q=80&w=1980&auto=format&fit=crop',
     gallery: [
-      'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?q=80&w=800&auto=format&fit=crop',
-      'https://images.unsplash.com/photo-1504674900247-0877df9cc836?q=80&w=800&auto=format&fit=crop'
+      'moshi/EQUINOX-CUISINE_moshimoshi-monaco_7.jpg',
+      'moshi/EQUINOX-CUISINE_moshimoshi-coldline.jpg',
+      'moshi/EQUINOX-CUISINE_equipements-monaco.jpg',
+      'moshi/EQUINOX-CUISINE_giorik-monaco.jpg',
+      'moshi/EQUINOX-CUISINE_moshimoshi-monte-carlo.jpg'
     ],
     challenge: `Niché au premier étage du Marché de la Condamine, place d’Armes à Monaco, Moshi Moshi est un restaurant japonais emblématique qui s’apprête à écrire un nouveau chapitre de son histoire. Intimiste et chaleureux, le lieu incarne une rencontre singulière entre la culture culinaire japonaise et les saveurs méditerranéennes.\nLe défi consistait à concevoir une cuisine professionnelle complète, capable de soutenir un service exigeant autour du sushi et de la gastronomie nippone, tout en respectant les contraintes d’un espace en étage au cœur d’un bâtiment historique. L’enjeu était double : garantir une ergonomie parfaite pour les équipes en cuisine, tout en créant un comptoir à sushi visible et soigné, véritable vitrine du savoir-faire du restaurant.`,
     solution: {
@@ -117,14 +139,17 @@ export const projectsData: Project[] = [
   },
   {
     id: 6,
-    title: 'Loma',
+    title: 'LOMA',
     category: 'Hybride',
     location: 'France',
     year: '2025',
     image: 'https://images.unsplash.com/photo-1504674900247-0877df9cc836?q=80&w=1980&auto=format&fit=crop',
     gallery: [
-      'https://images.unsplash.com/photo-1504674900247-0877df9cc836?q=80&w=800&auto=format&fit=crop',
-      'https://images.unsplash.com/photo-1519125323398-675f0ddb6308?q=80&w=800&auto=format&fit=crop'
+      'loma/EQUINOX-CUISINE_restaurant-loma.jpg',
+      'loma/EQUINOX-CUISINE_giorik.jpg',
+      'loma/EQUINOX-CUISINE_restaurant-loma-cannes.jpg',
+      'loma/EQUINOX-CUISINE_loma-chambre-froide.jpg',
+      'loma/EQUINOX-CUISINE_PRO-chambre-froide.jpg'
     ],
     challenge: `LOMA conjugue trois univers en un seul lieu : un restaurant qui célèbre une cuisine maison simple et précise, sublimée par des produits frais et de saison ; une épicerie fine qui met en lumière le savoir-faire des producteurs français à travers une sélection haut de gamme ; et un espace de privatisation pensé pour transformer chaque événement en moment d’exception.\nLe défi consistait à concevoir et installer une infrastructure technique complète, capable de soutenir cette triple activité dans un espace cohérent et fonctionnel. Il s’agissait de créer une cuisine professionnelle performante, un bar élégant et équipé, une zone de laverie optimisée, et une chambre froide adaptée aux volumes et à la diversité des produits, tout en respectant l’identité raffinée et authentique du lieu.`,
     solution: {
