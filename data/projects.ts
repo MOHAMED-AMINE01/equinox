@@ -57,7 +57,7 @@ export const projectsData: Project[] = [
     id: 3,
     title: 'DOMAINE DES MAPLIERS',
     category: 'Viticole',
-    location: 'Provence',
+    location: 'Lorgues',
     year: '2023',
     image: 'https://images.unsplash.com/photo-1506377247377-2a5b3b417ebb?q=80&w=2070&auto=format&fit=crop',
     gallery: [
@@ -84,7 +84,7 @@ export const projectsData: Project[] = [
     id: 4,
     title: 'VILLA LA MADONE',
     category: 'Résidentiel',
-    location: 'Côte d’Azur',
+    location: 'Villefranche-sur-mer',
     year: '2025',
     image: 'madone/EQUINOX-CUISINE_fourneau-molteni-nice.jpg',
     gallery: [
@@ -141,7 +141,7 @@ export const projectsData: Project[] = [
     id: 6,
     title: 'LOMA',
     category: 'Hybride',
-    location: 'France',
+    location: 'Cannes',
     year: '2025',
     image: 'https://images.unsplash.com/photo-1504674900247-0877df9cc836?q=80&w=1980&auto=format&fit=crop',
     gallery: [

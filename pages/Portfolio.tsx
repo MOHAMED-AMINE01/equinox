@@ -56,17 +56,17 @@ export const Portfolio: React.FC = () => {
             {filteredProjects.map(project => (
               <Link to={`/portfolio/${project.id}`} key={project.id} className="group block text-left">
                 <div className="overflow-hidden mb-6 relative">
-                  <img 
-                    src={project.image} 
-                    alt={project.title} 
+                  <img
+                    src={project.image}
+                    alt={project.title}
                     className="w-full h-auto object-cover aspect-[4/3] transition-transform duration-700 ease-in-out group-hover:scale-110"
                   />
-                   {/* Overlay */}
+                  {/* Overlay */}
                   <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-in-out"></div>
-                  
+
                   {/* Large Centered Arrow Icon */}
                   <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-                    <img 
+                    <img
                       /* src="https://wgl-dsites.net/bili/wp-content/uploads/2022/03/arrow_infobox.png" */
                       src="/EQUINOX-LOGO_monogramme_B.png"
                       alt="Voir le projet"
@@ -75,7 +75,7 @@ export const Portfolio: React.FC = () => {
                   </div>
                 </div>
                 <div>
-                  <p className="text-primary text-xs font-bold tracking-widest uppercase mb-2">{project.category}</p>
+                  <p className="text-primary text-xs font-bold tracking-widest uppercase mb-2">{project.location}</p>
                   <h3 className="text-3xl font-display font-bold text-white group-hover:text-primary transition-colors duration-300">
                     {project.title}
                   </h3>

@@ -130,7 +130,7 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) =>
                 <img
                   src="/EQUINOX-LOGO_2-Blanc.png"
                   alt="EQUINOX"
-                  className="h-32 w-auto object-contain"
+                  className="h-48 w-auto object-contain"
                 />
               </Link>
               <p className="text-textMuted leading-relaxed max-w-sm">
@@ -196,14 +196,25 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) =>
             </div>
           </div>
 
+
+          {/* ADC Logo: Centered on Mobile, Corner on Desktop */}
+          <div className="flex justify-center md:block mt-12 mb-4 md:m-0">
+            <img
+              src="/ADC-BLANC.jpg"
+              alt="Attestation de Capacité"
+              className="h-20 md:h-24 w-auto object-contain transition-all duration-500 md:absolute md:bottom-16 md:right-12"
+            />
+          </div>
+
           {/* Bottom Bar */}
-          <div className="flex flex-col md:flex-row justify-between items-center pt-8 border-t border-white/10 text-sm text-textMuted text-center md:text-left">
+          <div className="flex flex-col md:flex-row justify-between items-center pt-8 border-t border-white/10 text-sm text-textMuted text-center md:text-left mt-16">
             <p>&copy; {new Date().getFullYear()} EQUINOX. Tous droits réservés.</p>
             <div className="flex gap-8 mt-4 md:mt-0">
               <Link to="/legal" className="hover:text-primary transition-colors">Mentions légales</Link>
               <Link to="/privacy" className="hover:text-primary transition-colors">Politique de confidentialité</Link>
             </div>
           </div>
+
         </div>
       </footer>
 
