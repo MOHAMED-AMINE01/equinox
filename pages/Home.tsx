@@ -130,13 +130,6 @@ export const Home: React.FC = () => {
             <span className="text-primary">TÉLÉPHONE</span>
             <span className="text-white border-b border-transparent group-hover:border-white transition-all">+33 4 93 98 93 39</span>
           </a>
-          <div className="flex flex-col sm:flex-row gap-4 sm:gap-8 items-start sm:items-baseline">
-            <span className="text-primary">NOUS TROUVER</span>
-            <div className="flex gap-4">
-              <a href="https://maps.app.goo.gl/6UezjTnDmJ3krLUPA" target="_blank" rel="noopener noreferrer" className="text-white border-b border-transparent hover:border-white transition-all">FRANCE</a>
-              <a href="https://www.google.com/maps/place/5+Rue+Louis+Notari,+98000+Monaco/" target="_blank" rel="noopener noreferrer" className="text-white border-b border-transparent hover:border-white transition-all">MONACO</a>
-            </div>
-          </div>
         </div>
 
       </section>

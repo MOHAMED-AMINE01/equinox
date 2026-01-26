@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, ArrowUpRight, Instagram, Facebook, Linkedin, Mail, Phone, MapPin, ArrowUp } from 'lucide-react';
+import CookieBanner from './CookieBanner';
 
 export const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -35,6 +36,7 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) =>
 
   return (
     <div className="min-h-screen flex flex-col bg-background text-text selection:bg-primary selection:text-white">
+      <CookieBanner />
       {/* Header */}
       <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? 'bg-background/90 backdrop-blur-md border-b border-white/5 shadow-lg' : 'bg-transparent border-b border-transparent'}`}>
         <div className="container mx-auto px-6 h-24 flex justify-between items-center">
