@@ -114,7 +114,6 @@ export const Services: React.FC = () => {
             <span className="w-12 h-[1px] bg-primary"></span>
             <span className="text-white">Services</span>
           </div>
-          <div className="w-24 h-1 bg-primary mx-auto"></div>
         </div>
       </div>
 
