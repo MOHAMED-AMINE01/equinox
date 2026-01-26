@@ -77,8 +77,19 @@ export const About: React.FC = () => {
             <div className="flex w-fit animate-scroll">
                {[...Array(5)].map((_, i) => (
                   <div key={i} className="flex items-center shrink-0 mx-8">
-                     <h2 className="text-5xl md:text-7xl font-display font-medium uppercase tracking-tighter whitespace-nowrap text-white">ATTESTATION DE CAPACITÉ</h2>
-                     <ArrowUpRight className="w-12 h-12 md:w-20 md:h-20 text-primary mx-8 shrink-0" />
+                     <h2 className="text-5xl md:text-7xl font-display font-bold uppercase tracking-tighter whitespace-nowrap">Attestation De Capacité</h2>
+                     <div className="w-12 h-12 md:w-20 md:h-20 bg-[#CDBF98] mx-8 shrink-0"
+                        style={{
+                           maskImage: 'url(/EQUINOX-LOGO_monogramme_B.png)',
+                           WebkitMaskImage: 'url(/EQUINOX-LOGO_monogramme_B.png)',
+                           maskRepeat: 'no-repeat',
+                           WebkitMaskRepeat: 'no-repeat',
+                           maskPosition: 'center',
+                           WebkitMaskPosition: 'center',
+                           maskSize: 'contain',
+                           WebkitMaskSize: 'contain'
+                        }}
+                     />
                   </div>
                ))}
             </div>
@@ -128,7 +139,18 @@ export const About: React.FC = () => {
                {[...Array(5)].map((_, i) => (
                   <div key={i} className="flex items-center shrink-0 mx-8">
                      <h2 className="text-5xl md:text-7xl font-display font-bold uppercase tracking-tighter whitespace-nowrap">NOTRE MÉTHODE</h2>
-                     <ArrowUpRight className="w-12 h-12 md:w-20 md:h-20 text-primary mx-8 shrink-0" />
+                     <div className="w-12 h-12 md:w-20 md:h-20 bg-[#CDBF98] mx-8 shrink-0"
+                        style={{
+                           maskImage: 'url(/EQUINOX-LOGO_monogramme_B.png)',
+                           WebkitMaskImage: 'url(/EQUINOX-LOGO_monogramme_B.png)',
+                           maskRepeat: 'no-repeat',
+                           WebkitMaskRepeat: 'no-repeat',
+                           maskPosition: 'center',
+                           WebkitMaskPosition: 'center',
+                           maskSize: 'contain',
+                           WebkitMaskSize: 'contain'
+                        }}
+                     />
                   </div>
                ))}
             </div>
@@ -220,7 +242,18 @@ export const About: React.FC = () => {
                {[...Array(5)].map((_, i) => (
                   <div key={i} className="flex items-center shrink-0 mx-8">
                      <h2 className="text-5xl md:text-7xl font-display font-bold uppercase tracking-tighter whitespace-nowrap">NOTRE ÉQUIPE</h2>
-                     <ArrowUpRight className="w-12 h-12 md:w-20 md:h-20 text-primary mx-8 shrink-0" />
+                     <div className="w-12 h-12 md:w-20 md:h-20 bg-[#CDBF98] mx-8 shrink-0"
+                        style={{
+                           maskImage: 'url(/EQUINOX-LOGO_monogramme_B.png)',
+                           WebkitMaskImage: 'url(/EQUINOX-LOGO_monogramme_B.png)',
+                           maskRepeat: 'no-repeat',
+                           WebkitMaskRepeat: 'no-repeat',
+                           maskPosition: 'center',
+                           WebkitMaskPosition: 'center',
+                           maskSize: 'contain',
+                           WebkitMaskSize: 'contain'
+                        }}
+                     />
                   </div>
                ))}
             </div>

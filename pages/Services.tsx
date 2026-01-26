@@ -21,7 +21,7 @@ export const Services: React.FC = () => {
         'Identification de vos besoins spécifiques et de vos contraintes opérationnelles',
         'Proposition de solutions concrètes et réalistes, adaptées à votre modèle CHR',
         'Optimisation des processus de production pour plus d’efficacité en cuisine',
-        'Détection des opportunités d’expansion et de développement'
+        'Détection des opportunités d’expansion et de développement (nouvelles offres, nouveaux concepts, nouveaux espaces)'
       ]
     },
     {
@@ -31,7 +31,7 @@ export const Services: React.FC = () => {
       details: [
         'Conception de plans sur mesure pour votre cuisine professionnelle',
         'Réalisation de modélisations 3D pour visualiser et valider le projet avant travaux',
-        'Sélection et commande des équipements adaptés à vos besoins'
+        'Sélection et commande des équipements adaptés à vos besoins, à vos volumes et à votre positionnement'
       ]
     },
     {
@@ -40,7 +40,7 @@ export const Services: React.FC = () => {
       description: 'Nos équipes assurent l’installation de votre cuisine professionnelle dans le respect des normes d’hygiène, de sécurité et des délais, à Monaco comme sur l’ensemble de la Côte d’Azur. L’objectif : une cuisine opérationnelle rapidement, performante et prête à soutenir votre rythme de service.',
       details: [
         'Gestion logistique complète des livraisons et des interventions sur site',
-        'Montage et raccordement des équipements de cuisine dans le respect des normes',
+        'Montage et raccordement des équipements de cuisine dans le respect des normes en vigueur',
         'Mise en service avec vérification des performances et ajustement des réglages'
       ]
     },
@@ -49,8 +49,8 @@ export const Services: React.FC = () => {
       title: 'Formation',
       description: 'Une cuisine professionnelle n’exprime tout son potentiel que si les équipes la maîtrisent parfaitement. Nous formons vos collaborateurs pour garantir un usage optimal, sûr et efficace des équipements installés, qu’il s’agisse de matériel de cuisson, de froid ou de préparation.',
       details: [
-        'Formation sur l’utilisation correcte et efficace des équipements',
-        'Transmission des bonnes pratiques pour maximiser la durée de vie des appareils'
+        'Formation sur l’utilisation correcte et efficace des équipements de cuisine professionnelle',
+        'Transmission des bonnes pratiques pour maximiser la durée de vie et la performance des appareils'
       ]
     },
     {
@@ -59,19 +59,34 @@ export const Services: React.FC = () => {
       description: 'Pour garantir la longévité et la fiabilité de vos installations, EQUINOX propose un service de maintenance de cuisine professionnelle régulier et préventif. Cette approche limite les risques de panne, réduit les interruptions de service et sécurise votre activité sur le long terme.',
       details: [
         'Vérifications régulières et contrôles approfondis de vos équipements',
-        'Entretien ciblé et nettoyage technique pour un fonctionnement optimal',
+        'Entretien ciblé et nettoyage technique pour un fonctionnement optimal et durable',
         'Ajustements, réparations et recommandations d’amélioration si nécessaire'
       ]
     },
     {
       id: 'urgence',
-      title: 'Intervention d\'urgence',
+      title: 'Intervention d’urgence',
       description: 'En cas de panne ou de dysfonctionnement, notre service d’intervention d’urgence pour cuisine professionnelle est organisé pour répondre aux enjeux des métiers de la restauration et de l’hôtellerie, où chaque service compte.',
       details: [
         'Service d’astreinte disponible 7 jours sur 7, 24 heures sur 24',
         'Interventions de réparation rapides et efficaces sur vos équipements critiques',
-        'Remplacement ou proposition de solutions alternatives si nécessaire'
+        'Remplacement ou proposition de solutions alternatives si un équipement est défectueux'
       ]
+    }
+  ];
+
+  const benefits = [
+    {
+      title: "Zone accueil et de service (front of house)",
+      desc: "Ce que vos clients voient et ressentent, est bien plus qu’un décor : c’est la première expression de votre marque, un lieu d’émotion et de mise en scène culinaire. Nos équipes traduisent votre vision en un environnement fonctionnel, esthétique et parfaitement maîtrisé, où design, ergonomie et ambiance concourent à un seul objectif : valoriser votre savoir-faire et sublimer l’expérience de vos clients."
+    },
+    {
+      title: "Zones de production et de préparation (back of house)",
+      desc: "C’est le cœur invisible de votre performance. Là où chaque geste, chaque flux et chaque équipement sont pensés pour garantir efficacité, sécurité et régularité du service. C’est également ici que notre expertise prend toute sa valeur : concevoir des cuisines professionnelles sur mesure, performantes et durables, adaptées à vos volumes et à vos ambitions."
+    },
+    {
+      title: "Cuisine privée",
+      desc: "Grâce à notre expérience dans le secteur CHR, nous accompagnons aussi bien les établissements de restauration, d’hôtellerie et de luxe que les espaces résidentiels haut de gamme, où la frontière entre cuisine professionnelle et cuisine privée devient plus fluide que jamais. Notre approche : mettre la précision du monde pro au service de la convivialité, du confort et de l’excellence, quel que soit le cadre."
     }
   ];
 
@@ -79,80 +94,66 @@ export const Services: React.FC = () => {
     <div className="bg-background min-h-screen text-white">
 
       {/* HEADER SECTION (Hero) */}
-      <div className="relative h-[50vh] min-h-[400px] w-full flex flex-col justify-center items-center overflow-hidden border-b border-white/5 pt-32">
-        {/* Background Image & Overlay */}
+      <div className="relative h-[60vh] min-h-[500px] w-full flex flex-col justify-center items-center overflow-hidden border-b border-white/5 pt-32 text-center px-6">
         <div className="absolute inset-0">
           <img
             src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?q=80&w=2070&auto=format&fit=crop"
             alt="Services Header"
             className="w-full h-full object-cover grayscale scale-105"
           />
-          {/* Gradients to create the "moody" look */}
           <div className="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-black/80"></div>
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-transparent to-background/90"></div>
-
-          {/* Decorative Vertical Lines */}
-          <div className="absolute inset-0 container mx-auto px-6 border-x border-white/5 flex justify-between pointer-events-none opacity-20">
-            <div className="h-full w-px bg-white/10 hidden md:block"></div>
-            <div className="h-full w-px bg-white/10"></div>
-            <div className="h-full w-px bg-white/10 hidden md:block"></div>
-          </div>
         </div>
 
-        {/* Hero Text Content */}
-        <div className="relative z-10 text-center animate-up">
+        <div className="relative z-10 text-center animate-up px-6">
           <h1 className="text-5xl md:text-7xl font-display font-bold uppercase tracking-tight mb-8 drop-shadow-2xl">
             Nos Services
           </h1>
-          <div className="flex items-center justify-center gap-6 text-xs font-bold tracking-[0.2em] text-textMuted uppercase">
+          <div className="flex items-center justify-center gap-6 text-xs font-bold tracking-[0.2em] text-textMuted uppercase mb-8">
             <Link to="/" className="hover:text-primary transition-colors">Accueil</Link>
             <span className="w-12 h-[1px] bg-primary"></span>
             <span className="text-white">Services</span>
           </div>
+          <div className="w-24 h-1 bg-primary mx-auto"></div>
         </div>
       </div>
 
       <div className="container mx-auto px-6">
         {/* Main Content Split */}
-        <div className="flex flex-col lg:flex-row gap-0 lg:gap-20 items-start relative mb-24">
+        <div className="flex flex-col lg:flex-row gap-0 lg:gap-20 items-start relative mb-24 lg:mb-24">
 
           {/* LEFT COLUMN - STICKY */}
-          <div className="lg:w-5/12 lg:h-[calc(100vh-6rem)] lg:sticky lg:top-24 pt-20 pb-12 flex flex-col z-10">
-
+          <div className="lg:w-5/12 lg:sticky lg:top-32 pt-20 pb-12 flex flex-col z-10">
             <div className="flex flex-col items-start pr-0 lg:pr-10">
               <div className="mb-8 flex items-center gap-4">
                 <span className="w-12 h-[1px] bg-primary"></span>
                 <span className="text-primary font-bold tracking-[0.2em] uppercase text-sm">Nos Expertises</span>
               </div>
 
-              <h1 className="text-4xl md:text-5xl xl:text-6xl font-display font-bold leading-[1.1] mb-8">
-                Des solutions sur mesure pour des cuisines performantes.
-              </h1>
+              <h2 className="text-4xl md:text-5xl xl:text-6xl font-display font-bold leading-[1.1] mb-8">
+                Des solutions sur mesure pour des cuisines professionnelles performantes.
+              </h2>
 
-              <div className="text-textMuted text-lg leading-relaxed space-y-6 max-w-xl">
+              <div className="text-textMuted text-lg leading-relaxed space-y-8">
                 <p>
-                  Chez EQUINOX, chaque projet est pensé comme un véritable outil de performance pour les acteurs de la restauration à Monaco et sur la Côte d’Azur.
+                  Chez EQUINOX, chaque projet de cuisine professionnelle est pensé comme un véritable outil de performance, au service des acteurs de la restauration et de l’hospitalité à Monaco et sur la Côte d’Azur. Nous accompagnons les restaurants, hôtels, métiers de bouche et collectivités à chaque étape, de l’idée à l’entretien, en tant que partenaire technique spécialisé en cuisines professionnelles sur mesure.
                 </p>
-                <p className="hidden lg:block">
-                  De la conception à l'intervention d'urgence, nous créons des cuisines fonctionnelles, fiables et durables, parfaitement adaptées aux contraintes CHR.
+                <p>
+                  Grâce à une expertise complète – conseil, conception, installation, formation, maintenance et intervention d’urgence – nous créons des cuisines fonctionnelles, fiables et durables, parfaitement adaptées aux contraintes des établissements CHR. Notre mission est de vous permettre d’optimiser vos performances en toute sérénité, avec des équipements de qualité, une installation conforme aux normes et un accompagnement personnalisé, avant, pendant et après la mise en service de votre cuisine professionnelle.
                 </p>
               </div>
 
-              {/* Animated Bubble CTA */}
+              {/* Action Button */}
               <div className="mt-12">
-                <Link to="/about" className="group relative inline-flex items-center h-16 w-full max-w-[320px] cursor-pointer">
+                <Link to="/contact" className="group relative inline-flex items-center h-16 w-full max-w-[320px] cursor-pointer">
                   <span className="absolute left-0 h-16 w-16 bg-white/5 rounded-full transition-all duration-500 ease-in-out group-hover:w-full group-hover:bg-primary border border-white/5"></span>
                   <span className="relative z-10 pl-6 text-sm font-bold tracking-[0.2em] uppercase text-white transition-colors whitespace-nowrap">
-                    Notre méthode
+                    Démarrer un projet
                   </span>
                 </Link>
               </div>
             </div>
-
-            {/* Background Element for Left Side */}
-            <div className="absolute left-[-50vw] top-0 bottom-0 w-[50vw] bg-surface/20 pointer-events-none hidden lg:block"></div>
           </div>
-
 
           {/* RIGHT COLUMN - SCROLLABLE CONTENT */}
           <div className="lg:w-7/12 pt-0 lg:pt-20">
@@ -178,7 +179,7 @@ export const Services: React.FC = () => {
                         }}
                       />
                     </div>
-                    <h2 className="text-3xl lg:text-4xl font-display font-bold text-white group-hover:text-primary translate-x-2 transition-transform duration-500">
+                    <h2 className="text-3xl lg:text-4xl font-display font-bold text-white group-hover:text-primary translate-x-1 lg:translate-x-2 transition-transform duration-500">
                       {service.title}
                     </h2>
                   </div>
@@ -220,20 +221,27 @@ export const Services: React.FC = () => {
           .animate-scroll-text {
             animation: scrollText 30s linear infinite;
           }
-          .text-outline {
-            -webkit-text-stroke: 1px rgba(255, 255, 255, 0.1);
-            color: transparent;
-          }
         `}</style>
 
-        {/* Scrolling Bar - NOS SERVICES (Transparent & Larger) */}
+        {/* Scrolling Bar - NOTRE SAVOIR-FAIRE */}
         <div className="mb-20 flex whitespace-nowrap overflow-hidden select-none border-y border-white/5 py-12">
           <div className="animate-scroll-text flex items-center gap-16">
-            {[1, 2, 3, 4, 5, 6, 7, 8].map((i) => (
-              <React.Fragment key={i}>
-                <span className="text-5xl md:text-7xl font-display font-black uppercase tracking-tighter text-white">NOS SERVICES</span>
-                <ArrowUpRight className="text-primary w-12 h-12 md:w-24 md:h-24 shrink-0" strokeWidth={2} />
-              </React.Fragment>
+            {[...Array(5)].map((_, i) => (
+              <div key={i} className="flex items-center shrink-0 mx-8">
+                <h2 className="text-5xl md:text-7xl font-display font-bold uppercase tracking-tighter whitespace-nowrap">NOTRE SAVOIR-FAIRE</h2>
+                <div className="w-12 h-12 md:w-20 md:h-20 bg-[#CDBF98] mx-8 shrink-0"
+                  style={{
+                    maskImage: 'url(/EQUINOX-LOGO_monogramme_B.png)',
+                    WebkitMaskImage: 'url(/EQUINOX-LOGO_monogramme_B.png)',
+                    maskRepeat: 'no-repeat',
+                    WebkitMaskRepeat: 'no-repeat',
+                    maskPosition: 'center',
+                    WebkitMaskPosition: 'center',
+                    maskSize: 'contain',
+                    WebkitMaskSize: 'contain'
+                  }}
+                />
+              </div>
             ))}
           </div>
         </div>
@@ -246,8 +254,8 @@ export const Services: React.FC = () => {
                 <div className="aspect-[5/5] rounded-xl overflow-hidden border border-white/10 shadow-2xl">
                   <img
                     src="/mapliers/EQUINOX-CUISINE_domaine-mappliers-ombra.jpg"
-                    alt="Expertise Equinox"
-                    className="w-full h-full object-cover transition-all duration-700 group-hover:scale-110"
+                    alt="Savoir-faire Equinox"
+                    className="w-full h-full object-cover grayscale transition-all duration-700 group-hover:scale-110 group-hover:grayscale-0"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-transparent to-transparent"></div>
                 </div>
@@ -257,26 +265,21 @@ export const Services: React.FC = () => {
             {/* Right Content Side */}
             <div className="w-full lg:w-1/2">
               <div className="mb-8">
-                <span className="text-primary font-bold tracking-[0.2em] uppercase text-sm mb-4 block">NOS ATOUTS</span>
+                <span className="text-primary font-bold tracking-[0.2em] uppercase text-sm mb-4 block">Imaginer, concevoir et réussir ensemble.</span>
                 <h2 className="text-3xl md:text-5xl font-display font-bold text-white mb-6 leading-tight">
-                  L'expertise technique <br />au service de votre rendement
+                  Entre expérience client <br />et performance technique
                 </h2>
                 <p className="text-textMuted text-lg leading-relaxed max-w-xl">
-                  Parce qu'une cuisine est avant tout un outil de travail, nous mettons tout en œuvre pour garantir sa fiabilité et sa pérennité.
+                  Chez EQUINOX, nous concevons les espaces de restauration dans leur globalité, des zones visibles au public jusqu’aux postes techniques les plus stratégiques.
                 </p>
               </div>
 
-              {/* Benefits List - Accordion Style matching the second image */}
+              {/* Benefits List - Accordion */}
               <div className="space-y-8">
-                {[
-                  { title: "Standard de Qualité Élevé", desc: "À travers nos années d'expérience, nous avons appris que la robustesse est la clé. Nous sélectionnons uniquement le matériel capable de supporter les services les plus intenses." },
-                  { title: "Approche Personnalisée", desc: "Chaque cuisine est unique. Nous concevons vos flux et implantations sur mesure pour maximiser l'ergonomie de vos brigades." },
-                  { title: "Innovation Technique", desc: "Nous intégrons les solutions connectées et économes en énergie pour réduire vos coûts opérationnels durablement." },
-                  { title: "Service Premium", desc: "Un accompagnement VIP incluant formation sur site et audit régulier de vos performances techniques." }
-                ].map((item, idx) => (
+                {benefits.map((item, idx) => (
                   <div
                     key={idx}
-                    className="group cursor-pointer"
+                    className="group cursor-pointer border-b border-white/5 pb-8"
                     onClick={() => setOpenBenefit(openBenefit === idx ? null : idx)}
                   >
                     <div className="flex items-center gap-6 mb-4">
@@ -293,7 +296,7 @@ export const Services: React.FC = () => {
                         {item.title}
                       </h4>
                     </div>
-                    <div className={`pl-12 overflow-hidden transition-all duration-500 ease-in-out ${openBenefit === idx ? 'max-h-40 mb-6' : 'max-h-0'}`}>
+                    <div className={`pl-12 overflow-hidden transition-all duration-500 ease-in-out ${openBenefit === idx ? 'max-h-60 mt-4' : 'max-h-0'}`}>
                       <div className="border-l-2 border-primary/30 pl-6 py-2">
                         <p className="text-textMuted text-lg leading-relaxed">
                           {item.desc}
@@ -308,25 +311,24 @@ export const Services: React.FC = () => {
         </div>
       </section>
 
-      {/* Final CTA Block - MOVED OUTSIDE THE 2-COLUMN LAYOUT TO BE FULL WIDTH */}
-      <div className="container mx-auto px-6 pb-24">
-        <div className="relative rounded-3xl overflow-hidden border border-white/5 group">
-          <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
-
+      {/* Final CTA Block */}
+      <div className="container mx-auto px-6 pb-24 mt-12">
+        <div className="relative rounded-3xl overflow-hidden border border-white/5 bg-surface/30 backdrop-blur-sm group">
           <div className="relative z-10 px-8 py-16 md:p-24 flex flex-col items-center text-center">
             <div className="w-20 h-20 rounded-full bg-white/5 flex items-center justify-center mb-8 border border-white/10 text-primary">
               <Phone size={32} />
             </div>
 
-            <h3 className="text-3xl md:text-5xl font-display font-bold mb-6 text-white">Un projet ? Une urgence ?</h3>
-            <p className="text-textMuted text-xl mb-12 max-w-xl mx-auto leading-relaxed">
-              Nos équipes techniques sont prêtes à intervenir rapidement à Monaco et sur la Côte d'Azur.
-            </p>
+            <h3 className="text-3xl md:text-5xl font-display font-bold mb-6 text-white max-w-3xl">
+              Un projet de cuisine professionnelle sur mesure ou une urgence à gérer ? Parlons-en dès aujourd’hui.
+            </h3>
 
-            <Link to="/contact" className="group/btn relative inline-flex items-center justify-center h-16 px-12 cursor-pointer overflow-hidden rounded-full border border-white/20 hover:border-primary transition-colors duration-300 bg-background/50 hover:bg-primary/10">
-              <span className="absolute inset-0 w-full h-full bg-primary origin-left scale-x-0 transition-transform duration-500 ease-out group-hover/btn:scale-x-100"></span>
-              <span className="relative z-10 text-base font-bold uppercase tracking-widest text-white transition-colors group-hover/btn:text-white">Contactez-nous</span>
-            </Link>
+            <div className="mt-12">
+              <Link to="/contact" className="group/btn relative inline-flex items-center justify-center h-20 px-12 cursor-pointer overflow-hidden rounded-full border border-white/20 hover:border-primary transition-colors duration-300 bg-background/50 hover:bg-primary/10">
+                <span className="absolute inset-0 w-full h-full bg-primary origin-left scale-x-0 transition-transform duration-500 ease-out group-hover/btn:scale-x-100"></span>
+                <span className="relative z-10 text-base font-bold uppercase tracking-widest text-white transition-colors group-hover/btn:text-white">Contactez-nous</span>
+              </Link>
+            </div>
           </div>
         </div>
       </div>

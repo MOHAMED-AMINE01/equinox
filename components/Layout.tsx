@@ -167,14 +167,54 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) =>
             {/* Column 3: Contact (3 cols) */}
             <div className="lg:col-span-3 flex flex-col items-center text-center md:items-start md:text-left">
               <h4 className="text-white font-bold text-lg mb-8">Nous contacter</h4>
-              <ul className="space-y-6">
+              <ul className="space-y-3">
+                {/* Téléphone */}
                 <li>
-                  <span className="block text-xs uppercase tracking-widest text-textMuted mb-1">Tél.</span>
-                  <a href="tel:+33493989339" className="text-textMuted font-medium text-white hover:text-primary transition-colors">+33 4 93 98 93 39</a>
+                  <span className="text-white/50 text-xs uppercase tracking-widest block mb-1">Téléphone :</span>
+                  <a href="tel:+33493989339" className="group flex items-center justify-center md:justify-start">
+                    <span className="text-primary font-bold overflow-hidden w-0 opacity-0 group-hover:w-5 group-hover:opacity-100 transition-all duration-300 ease-out whitespace-nowrap block">
+                      +
+                    </span>
+                    <span className="text-textMuted group-hover:text-primary transition-colors duration-300">
+                      +33 4 93 98 93 39
+                    </span>
+                  </a>
                 </li>
+
+                {/* Email */}
                 <li>
-                  <span className="block text-xs uppercase tracking-widest text-textMuted mb-1">Email</span>
-                  <a href="mailto:contact@equinox.mc" className="text-textMuted font-medium text-white hover:text-primary transition-colors">contact@equinox.mc</a>
+                  <span className="text-white/50 text-xs uppercase tracking-widest block mb-1">Email :</span>
+                  <a href="mailto:contact@equinox.mc" className="group flex items-center justify-center md:justify-start">
+                    <span className="text-primary font-bold overflow-hidden w-0 opacity-0 group-hover:w-5 group-hover:opacity-100 transition-all duration-300 ease-out whitespace-nowrap block">
+                      +
+                    </span>
+                    <span className="text-textMuted group-hover:text-primary transition-colors duration-300">
+                      contact@equinox.mc
+                    </span>
+                  </a>
+                </li>
+
+                {/* Nous trouver */}
+                <li>
+                  <span className="text-white/50 text-xs uppercase tracking-widest block mb-2">Nous trouver :</span>
+                  <div className="space-y-2">
+                    <a href="https://maps.app.goo.gl/6UezjTnDmJ3krLUPA" target="_blank" rel="noopener noreferrer" className="group flex items-center justify-center md:justify-start">
+                      <span className="text-primary font-bold overflow-hidden w-0 opacity-0 group-hover:w-5 group-hover:opacity-100 transition-all duration-300 ease-out whitespace-nowrap block">
+                        +
+                      </span>
+                      <span className="text-textMuted group-hover:text-primary transition-colors duration-300">
+                        France
+                      </span>
+                    </a>
+                    <a href="https://www.google.com/maps/place/5+Rue+Louis+Notari,+98000+Monaco/" target="_blank" rel="noopener noreferrer" className="group flex items-center justify-center md:justify-start">
+                      <span className="text-primary font-bold overflow-hidden w-0 opacity-0 group-hover:w-5 group-hover:opacity-100 transition-all duration-300 ease-out whitespace-nowrap block">
+                        +
+                      </span>
+                      <span className="text-textMuted group-hover:text-primary transition-colors duration-300">
+                        Monaco
+                      </span>
+                    </a>
+                  </div>
                 </li>
               </ul>
             </div>
@@ -198,13 +238,13 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) =>
 
 
           {/* ADC Logo: Centered on Mobile, Corner on Desktop */}
-          <div className="flex justify-center md:block mt-12 mb-4 md:m-0">
+          {/* <div className="flex justify-center md:block mt-12 mb-4 md:m-0">
             <img
               src="/ADC-BLANC.jpg"
               alt="Attestation de Capacité"
               className="h-20 md:h-24 w-auto object-contain transition-all duration-500 md:absolute md:bottom-16 md:right-12"
             />
-          </div>
+          </div> */}
 
           {/* Bottom Bar */}
           <div className="flex flex-col md:flex-row justify-between items-center pt-8 border-t border-white/10 text-sm text-textMuted text-center md:text-left mt-16">

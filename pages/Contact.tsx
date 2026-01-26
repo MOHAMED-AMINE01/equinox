@@ -186,6 +186,15 @@ export const Contact: React.FC = () => {
                         <a href="mailto:contact@equinox.mc" className="text-xl md:text-2xl text-white hover:text-primary transition-colors font-medium break-all">contact@equinox.mc</a>
                      </div>
 
+                     {/* Nous trouver */}
+                     <div className="flex flex-col gap-2 relative pl-8 border-l border-white/10">
+                        <span className="text-xs font-bold uppercase tracking-widest text-textMuted">Nous trouver</span>
+                        <div className="flex flex-col md:flex-row gap-4 md:gap-8">
+                           <a href="https://maps.app.goo.gl/6UezjTnDmJ3krLUPA" target="_blank" rel="noopener noreferrer" className="text-xl text-white hover:text-primary transition-colors font-medium">FRANCE</a>
+                           <a href="https://www.google.com/maps/place/5+Rue+Louis+Notari,+98000+Monaco/" target="_blank" rel="noopener noreferrer" className="text-xl text-white hover:text-primary transition-colors font-medium">MONACO</a>
+                        </div>
+                     </div>
+
                      {/* Adresse France */}
                      <div
                         className="flex flex-col gap-2 relative pl-8 border-l border-white/10 cursor-pointer group"
