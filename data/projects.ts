@@ -7,7 +7,7 @@ export const projectsData: Project[] = [
     category: 'Pâtisserie',
     location: 'Monaco',
     year: '2024',
-    image: 'https://images.unsplash.com/photo-1578985545062-69928b1d9587?q=80&w=1989&auto=format&fit=crop',
+    image: 'https://images.unsplash.com/photo-1578985545062-69928b1d9587?q=80&w=1920&auto=format&fit=crop&fm=webp',
     gallery: [
       '/tayac/EQUINOX-CUISINE_patisserie-tayac-monaco-03.jpg',
       '/tayac/EQUINOX-CUISINE_patisserie-tayac-monaco-05.jpg',
@@ -32,7 +32,7 @@ export const projectsData: Project[] = [
     category: 'Restauration',
     location: 'Aéroport de Nice',
     year: '2024',
-    image: 'https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?q=80&w=1981&auto=format&fit=crop',
+    image: 'https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?q=80&w=1920&auto=format&fit=crop&fm=webp',
     gallery: [
       'bagnard/EQUINOX-CUISINE_restaurant-bagnard-aeroport.jpg',
       'bagnard/EQUINOX-CUISINE_vitrine-refrigeree.jpg',
@@ -59,7 +59,7 @@ export const projectsData: Project[] = [
     category: 'Viticole',
     location: 'Lorgues',
     year: '2023',
-    image: 'https://images.unsplash.com/photo-1506377247377-2a5b3b417ebb?q=80&w=2070&auto=format&fit=crop',
+    image: 'https://images.unsplash.com/photo-1506377247377-2a5b3b417ebb?q=80&w=1920&auto=format&fit=crop&fm=webp',
     gallery: [
       'mapliers/EQUINOX-CUISINE_domaine-des-mappliers.jpg',
       'mapliers/EQUINOX-CUISINE_bar-degustation.jpg',
@@ -119,7 +119,7 @@ export const projectsData: Project[] = [
     category: 'Restauration',
     location: 'Monaco',
     year: '2025',
-    image: 'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?q=80&w=1980&auto=format&fit=crop',
+    image: 'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?q=80&w=1920&auto=format&fit=crop&fm=webp',
     gallery: [
       'moshi/EQUINOX-CUISINE_moshimoshi-monaco_7.jpg',
       'moshi/EQUINOX-CUISINE_moshimoshi-coldline.jpg',
@@ -143,7 +143,7 @@ export const projectsData: Project[] = [
     category: 'Hybride',
     location: 'Cannes',
     year: '2025',
-    image: 'https://images.unsplash.com/photo-1504674900247-0877df9cc836?q=80&w=1980&auto=format&fit=crop',
+    image: 'https://images.unsplash.com/photo-1504674900247-0877df9cc836?q=80&w=1920&auto=format&fit=crop&fm=webp',
     gallery: [
       'loma/EQUINOX-CUISINE_restaurant-loma.jpg',
       'loma/EQUINOX-CUISINE_giorik.jpg',

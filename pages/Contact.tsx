@@ -93,6 +93,15 @@ export const Contact: React.FC = () => {
                            />
                         </div>
 
+                        {/* Phone */}
+                        <div className="group">
+                           <input
+                              type="tel"
+                              placeholder="Téléphone"
+                              className="w-full bg-transparent border-b border-white/20 py-4 text-white placeholder:text-textMuted/50 focus:outline-none focus:border-primary transition-colors text-lg"
+                           />
+                        </div>
+
                         {/* Subject */}
                         <div className="group">
                            <input
@@ -158,7 +167,6 @@ export const Contact: React.FC = () => {
 
                {/* RIGHT COLUMN: INFO */}
                <div className="lg:w-5/12 flex flex-col justify-center pt-10 lg:pt-0">
-                  <span className="text-primary font-bold tracking-widest uppercase text-sm mb-6 block">Nos Coordonnées</span>
 
                   <h2 className="text-3xl md:text-5xl font-display font-bold mb-8 leading-tight text-white">
                      Un projet en tête ? <br /> Parlons-en ensemble.

@@ -219,32 +219,32 @@ export const Home: React.FC = () => {
               {
                 title: 'Conseil',
                 desc: 'Analyser vos besoins, vos flux et vos contraintes pour définir une solution technique cohérente et pérenne, adaptée à votre activité CHR ou collective.',
-                img: 'https://images.unsplash.com/photo-1542626991-cbc4e32524cc?q=80&w=600&auto=format&fit=crop'
+                img: 'https://images.unsplash.com/photo-1542626991-cbc4e32524cc?q=80&w=800&auto=format&fit=crop&fm=webp'
               },
               {
                 title: 'Conception',
                 desc: 'Imaginer et dessiner une cuisine professionnelle sur mesure, optimisée pour vos équipes, vos volumes et vos ambitions, qu’il s’agisse d’un restaurant gastronomique, d’un hôtel ou d’une collectivité.',
-                img: 'https://images.unsplash.com/photo-1503387762-592deb58ef4e?q=80&w=600&auto=format&fit=crop'
+                img: 'https://images.unsplash.com/photo-1503387762-592deb58ef4e?q=80&w=800&auto=format&fit=crop&fm=webp'
               },
               {
                 title: 'Installation',
                 desc: 'Coordonner et réaliser l’installation complète de vos équipements de cuisine professionnelle, dans le respect des normes d’hygiène, de sécurité et des délais, à Monaco et sur la Côte d’Azur.',
-                img: 'https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?q=80&w=600&auto=format&fit=crop'
+                img: 'https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?q=80&w=800&auto=format&fit=crop&fm=webp'
               },
               {
                 title: 'Formation',
                 desc: 'Accompagner vos équipes dans la prise en main des équipements de cuisine afin d’exploiter pleinement leur potentiel technique au quotidien.',
-                img: 'https://images.unsplash.com/photo-1577106263724-2c8e03bfe9cf?q=80&w=600&auto=format&fit=crop'
+                img: 'https://images.unsplash.com/photo-1577106263724-2c8e03bfe9cf?q=80&w=800&auto=format&fit=crop&fm=webp'
               },
               {
                 title: 'Maintenance',
                 desc: 'Assurer le suivi et la maintenance de votre cuisine professionnelle pour garantir sa performance, prolonger sa durée de vie et limiter les arrêts d’activité.',
-                img: 'https://images.unsplash.com/photo-1454692173233-f4f34c12adad?q=80&w=600&auto=format&fit=crop'
+                img: 'https://images.unsplash.com/photo-1454692173233-f4f34c12adad?q=80&w=800&auto=format&fit=crop&fm=webp'
               },
               {
                 title: 'Intervention d’urgence',
                 desc: 'Répondre rapidement à vos imprévus techniques et garantir votre continuité de service grâce à une astreinte 24/7 dédiée à nos clients sous contrat.',
-                img: 'https://images.unsplash.com/photo-1517048676732-d65bc937f952?q=80&w=600&auto=format&fit=crop'
+                img: 'https://images.unsplash.com/photo-1517048676732-d65bc937f952?q=80&w=800&auto=format&fit=crop&fm=webp'
               },
             ].map((service, i) => (
               <div key={i} className="group flex flex-col items-center text-center">
@@ -254,6 +254,7 @@ export const Home: React.FC = () => {
                   <img
                     src={service.img}
                     alt={service.title}
+                    loading="lazy"
                     className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110"
                   />
                 </div>
@@ -287,8 +288,9 @@ export const Home: React.FC = () => {
             <div className="w-full lg:w-1/2 relative group">
               <div className="aspect-video md:aspect-[2.5/1] lg:aspect-[4/5] w-full overflow-hidden rounded-sm relative bg-surfaceLight">
                 <img
-                  src="https://images.unsplash.com/photo-1577106263724-2c8e03bfe9cf?q=80&w=2000&auto=format&fit=crop"
+                  src="https://images.unsplash.com/photo-1577106263724-2c8e03bfe9cf?q=80&w=1200&auto=format&fit=crop&fm=webp"
                   alt="Vision Equinox"
+                  loading="lazy"
                   className="w-full h-full object-cover grayscale transition-all duration-700 group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-60"></div>
@@ -335,7 +337,7 @@ export const Home: React.FC = () => {
         {/* Background Image - Absolute Right 60% with vertical margin (top-12 bottom-12) */}
         <div className="absolute top-12 bottom-12 right-0 w-[80%] md:w-[70%] lg:w-[60%] z-0">
           <div className="w-full h-full bg-surfaceLight rounded-tl-[350px] rounded-bl-[350px] overflow-hidden relative shadow-2xl border-l border-y border-white/5">
-            <img src="https://images.unsplash.com/photo-1565557623262-b51c2513a641?q=80&w=1971&auto=format&fit=crop" className="w-full h-full object-cover opacity-80 transition-opacity duration-700" alt="Equinox Tech" />
+            <img src="https://images.unsplash.com/photo-1565557623262-b51c2513a641?q=80&w=1200&auto=format&fit=crop&fm=webp" className="w-full h-full object-cover opacity-80 transition-opacity duration-700" alt="Equinox Tech" loading="lazy" />
             <div className="absolute inset-0 bg-gradient-to-r from-surface via-surface/60 to-transparent"></div>
           </div>
         </div>
@@ -350,7 +352,7 @@ export const Home: React.FC = () => {
                 <div className="flex items-center gap-6 mb-4">
                   {/* Pill - Updated Image */}
                   <div className="w-32 h-12 md:w-48 md:h-20 rounded-full overflow-hidden border border-white/20 relative shrink-0">
-                    <img src="https://images.unsplash.com/photo-1504754524776-8f4f37790ca0?q=80&w=800&auto=format&fit=crop" className="w-full h-full object-cover" alt="Detail" />
+                    <img src="https://images.unsplash.com/photo-1504754524776-8f4f37790ca0?q=80&w=600&auto=format&fit=crop&fm=webp" className="w-full h-full object-cover" alt="Detail" loading="lazy" />
                     <div className="absolute inset-0 bg-primary/10 mix-blend-overlay"></div>
                   </div>
                   {/* Word 1 - Increased Size */}
@@ -447,7 +449,7 @@ export const Home: React.FC = () => {
             ].map((project, i) => (
               <Link to="/portfolio" key={i} className="group relative block overflow-hidden rounded-xl bg-surfaceLight">
                 <div className="aspect-[4/3] overflow-hidden">
-                  <img src={project.img} alt={project.title} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                  <img src={project.img} alt={project.title} loading="lazy" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
                 </div>
                 <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent p-8 flex flex-col justify-end">
                   <span className="text-primary text-xs font-bold uppercase tracking-widest mb-2">{project.loc}</span>

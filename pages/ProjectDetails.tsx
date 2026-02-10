@@ -7,7 +7,7 @@ function DesktopGalleryCarousel({ images }: { images: (string | { src: string })
   // Normalisation pour supporter string[] ou objet[]
   const normalized = images.map(img => typeof img === 'string' ? { src: img } : img);
   const [order, setOrder] = React.useState<number[]>(normalized.map((_, i) => i));
-  const [modalIdx, setModalIdx] = React.useState<number|null>(null);
+  const [modalIdx, setModalIdx] = React.useState<number | null>(null);
   const [zoom, setZoom] = React.useState(false);
 
   React.useEffect(() => {
@@ -109,7 +109,7 @@ function DesktopGalleryCarousel({ images }: { images: (string | { src: string })
               >
                 <span aria-hidden="true">&#10095;</span>
               </button>
-              
+
             </div>
           </div>
         </div>
@@ -162,14 +162,14 @@ const Carousel: React.FC<{ images: string[] }> = ({ images }) => {
           onClick={goToPrev}
           aria-label="Image précédente"
         >
-          <svg width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path d="M15 19l-7-7 7-7"/></svg>
+          <svg width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path d="M15 19l-7-7 7-7" /></svg>
         </button>
         <button
           className="absolute right-2 top-1/2 -translate-y-1/2 bg-black/40 hover:bg-black/70 text-white rounded-full p-2 z-20 opacity-0 group-hover:opacity-100 group-focus-within:opacity-100 transition-opacity duration-200"
           onClick={goToNext}
           aria-label="Image suivante"
         >
-          <svg width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg>
+          <svg width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7" /></svg>
         </button>
         {/* Dots */}
         <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2">
@@ -202,14 +202,14 @@ const Carousel: React.FC<{ images: string[] }> = ({ images }) => {
               onClick={goToPrev}
               aria-label="Image précédente"
             >
-              <svg width="32" height="32" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path d="M15 19l-7-7 7-7"/></svg>
+              <svg width="32" height="32" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path d="M15 19l-7-7 7-7" /></svg>
             </button>
             <button
               className="absolute right-2 top-1/2 -translate-y-1/2 bg-black/60 hover:bg-black/90 text-white rounded-full p-3 z-60"
               onClick={goToNext}
               aria-label="Image suivante"
             >
-              <svg width="32" height="32" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg>
+              <svg width="32" height="32" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7" /></svg>
             </button>
           </div>
         </div>
@@ -223,7 +223,7 @@ export const ProjectDetails: React.FC = () => {
   const navigate = useNavigate();
 
   const currentProjectIndex = projectsData.findIndex(p => p.id === parseInt(id || '0'));
-  
+
   // React.useEffect is used to avoid attempting to navigate during the render cycle.
   React.useEffect(() => {
     if (currentProjectIndex === -1) {
@@ -234,7 +234,7 @@ export const ProjectDetails: React.FC = () => {
   if (currentProjectIndex === -1) {
     return null; // Render nothing while redirecting
   }
-  
+
   const project = projectsData[currentProjectIndex];
   const prevProject = currentProjectIndex > 0 ? projectsData[currentProjectIndex - 1] : null;
   const nextProject = currentProjectIndex < projectsData.length - 1 ? projectsData[currentProjectIndex + 1] : null;
@@ -295,11 +295,11 @@ export const ProjectDetails: React.FC = () => {
       {/* MAIN CONTENT - Inspired Layout */}
       <section className="py-24">
         <div className="container mx-auto px-6">
-          
+
           {/* Section 01: Challenge */}
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 mb-24">
             <div className="lg:col-span-4">
-              <h2 className="text-4xl font-display font-bold sticky top-32">01. <br/> Le Challenge</h2>
+              <h2 className="text-4xl font-display font-bold sticky top-32">01. <br /> Le Challenge</h2>
             </div>
             <div className="lg:col-span-8 text-lg text-textMuted leading-relaxed lg:flex lg:flex-row gap-8 items-center">
               <div className="flex-1">
@@ -324,7 +324,7 @@ export const ProjectDetails: React.FC = () => {
           {/* Section 02: Solution */}
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 mb-24">
             <div className="lg:col-span-4">
-              <h2 className="text-4xl font-display font-bold sticky top-32">02. <br/> La Solution</h2>
+              <h2 className="text-4xl font-display font-bold sticky top-32">02. <br /> La Solution</h2>
             </div>
             <div className="lg:col-span-8 text-lg text-textMuted leading-relaxed space-y-6">
               <p>{project.solution.intro}</p>
@@ -342,11 +342,11 @@ export const ProjectDetails: React.FC = () => {
           {/* Section 03: Result */}
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16">
             <div className="lg:col-span-4">
-              <h2 className="text-4xl font-display font-bold sticky top-32">03. <br/> Le Résultat</h2>
+              <h2 className="text-4xl font-display font-bold sticky top-32">03. <br /> Le Résultat</h2>
             </div>
             <div className="lg:col-span-8 text-lg text-textMuted leading-relaxed space-y-6">
               <blockquote className="border-l-4 border-primary pl-6 my-6 italic text-xl text-white">
-                 La précision technique au service de l’émotion.
+                La précision technique au service de l’émotion.
               </blockquote>
               <p>{project.result}</p>
             </div>
@@ -360,7 +360,12 @@ export const ProjectDetails: React.FC = () => {
         <div className="container mx-auto px-6">
           <h2 className="text-4xl font-display font-bold mb-12 text-center">Nos réalisations</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-12 max-w-5xl mx-auto">
-            {projectsData.filter(p => p.id !== project.id).slice(0, 2).map(relatedProject => (
+            {React.useMemo(() => {
+              const otherProjects = projectsData.filter(p => p.id !== project.id);
+              return [...otherProjects]
+                .sort(() => Math.random() - 0.5)
+                .slice(0, 2);
+            }, [project.id]).map(relatedProject => (
               <Link to={`/portfolio/${relatedProject.id}`} key={relatedProject.id} className="group block text-left">
                 <div className="overflow-hidden mb-6">
                   <img src={relatedProject.image} alt={relatedProject.title} className="w-full h-auto object-cover aspect-[4/3] transition-transform duration-500 ease-in-out group-hover:scale-110" />
@@ -391,7 +396,7 @@ export const ProjectDetails: React.FC = () => {
           <div>
             {nextProject && (
               <Link to={`/portfolio/${nextProject.id}`} className="group flex items-center gap-4 text-right">
-                 <div>
+                <div>
                   <span className="text-xs uppercase tracking-widest text-textMuted">Suivant</span>
                   <p className="font-bold text-lg text-white">{nextProject.title}</p>
                 </div>

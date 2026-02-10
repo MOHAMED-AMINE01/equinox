@@ -30,7 +30,7 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) =>
 
   // Pages with a hero image that should sit under the transparent navbar.
   // For these pages, we remove the top padding from the main container.
-  const pagesWithHero = ['/', '/services', '/about', '/contact', '/portfolio'];
+  const pagesWithHero = ['/', '/services', '/about', '/contact', '/portfolio', '/legal', '/privacy'];
   const isProjectDetailsPage = /^\/portfolio\/\d+$/.test(location.pathname);
   const hasHero = pagesWithHero.includes(location.pathname) || isProjectDetailsPage;
 
@@ -145,6 +145,7 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) =>
               <h4 className="text-white font-bold text-lg mb-8">Navigation</h4>
               <ul className="space-y-6">
                 {[
+                  { name: 'Accueil', path: '/' },
                   { name: 'Services', path: '/services' },
                   { name: 'Réalisations', path: '/portfolio' },
                   { name: 'À propos', path: '/about' },
