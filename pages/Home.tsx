@@ -4,13 +4,20 @@ import { Button } from '../components/Button';
 import { ArrowUpRight, DraftingCompass, Wrench, GraduationCap, Settings, Phone, Shield, MessageCircle } from 'lucide-react';
 
 export const Home: React.FC = () => {
-  // Data for logos
-  const partners = ["Hobart", "Eberhart", "Panem"];
+  // Data for client logos
   const clients = [
-    "Aéroport de Nice", "Le Royal Mougin", "Hotel La Perouse", "Stade de Nice",
-    "Mairie de Monaco", "SBM", "Majestic", "Casino de Grasse",
-    "La Petite Maison", "Le Garibaldi", "Panisse", "La Brasserie du Port",
-    "Bistrot Jennifer", "Tayac"
+    { name: 'Aéroport de Nice', img: '/LOGOS CLIENTS/B_Aeroport_Nice_Cote_d_Azur_logo.png' },
+    { name: 'AS Monaco', img: '/LOGOS CLIENTS/B_AS-monaco.png' },
+    { name: 'Royal Mougins', img: '/LOGOS CLIENTS/B_Logo+Royal+Mougins.png' },
+    { name: 'Mairie de Monaco', img: '/LOGOS CLIENTS/B_Mairie_de_Monaco_logo.png' },
+    { name: 'Monte-Carlo SBM', img: '/LOGOS CLIENTS/B_montecarlo-1.png' },
+    { name: 'Groupe Barrière', img: '/LOGOS CLIENTS/B_logo-groupe-barriere-21683efd0f2d7f3.png' },
+    { name: 'Lagardère', img: '/LOGOS CLIENTS/B_Lagardere.png' },
+    { name: 'Sodexo', img: '/LOGOS CLIENTS/B_sodexo.png' },
+    { name: 'SSP', img: '/LOGOS CLIENTS/B_SSP.png' },
+    { name: 'Ville de Nice', img: '/LOGOS CLIENTS/B_ville-de-nice-logo.png' },
+    { name: 'Allianz Riviera', img: '/LOGOS CLIENTS/allianz-logo.png.webp' },
+    { name: 'Area', img: '/LOGOS CLIENTS/B_AREA.png' },
   ];
 
   return (
@@ -68,7 +75,7 @@ export const Home: React.FC = () => {
         </div>
 
         {/* Content Container */}
-        <div className="container mx-auto px-6 relative z-10 lg:pl-32 flex flex-col justify-center lg:pt-10">
+        <div className="container mx-auto px-6 relative z-10 lg:pl-32 flex flex-col justify-center lg:pt-5">
           <div className="max-w-5xl">
 
             {/* 1. Top Pill Image + Text */}
@@ -121,7 +128,7 @@ export const Home: React.FC = () => {
         </div>
 
         {/* Footer Info: Mail & Call (Relative on mobile to flow naturally, Absolute on desktop) */}
-        <div className="mt-16 lg:absolute lg:bottom-10 lg:left-60 z-30 px-6 lg:px-0 flex flex-col sm:flex-row gap-8 sm:gap-12 text-xs font-bold tracking-widest uppercase text-white/50 animate-up delay-500">
+        <div className="mt-16 lg:absolute lg:bottom-7 lg:left-60 z-30 px-6 lg:px-0 flex flex-col sm:flex-row gap-8 sm:gap-12 text-xs font-bold tracking-widest uppercase text-white/50 animate-up delay-500">
           <a href="mailto:contact@equinox.mc" className="hover:text-white transition-colors cursor-pointer group flex items-baseline gap-3">
             <span className="text-primary">E-MAIL</span>
             <span className="text-white border-b border-transparent group-hover:border-white transition-all">contact@equinox.mc</span>
@@ -219,32 +226,32 @@ export const Home: React.FC = () => {
               {
                 title: 'Conseil',
                 desc: 'Analyser vos besoins, vos flux et vos contraintes pour définir une solution technique cohérente et pérenne, adaptée à votre activité CHR ou collective.',
-                img: 'https://images.unsplash.com/photo-1542626991-cbc4e32524cc?q=80&w=800&auto=format&fit=crop&fm=webp'
+                img: '/services/EQUINOX-cuisine-services-conseil.png'
               },
               {
                 title: 'Conception',
                 desc: 'Imaginer et dessiner une cuisine professionnelle sur mesure, optimisée pour vos équipes, vos volumes et vos ambitions, qu’il s’agisse d’un restaurant gastronomique, d’un hôtel ou d’une collectivité.',
-                img: 'https://images.unsplash.com/photo-1503387762-592deb58ef4e?q=80&w=800&auto=format&fit=crop&fm=webp'
+                img: '/services/EQUINOX-cuisine-services-conception.png'
               },
               {
                 title: 'Installation',
                 desc: 'Coordonner et réaliser l’installation complète de vos équipements de cuisine professionnelle, dans le respect des normes d’hygiène, de sécurité et des délais, à Monaco et sur la Côte d’Azur.',
-                img: 'https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?q=80&w=800&auto=format&fit=crop&fm=webp'
+                img: '/services/EQUINOX-cuisine-services-installation.png'
               },
               {
                 title: 'Formation',
                 desc: 'Accompagner vos équipes dans la prise en main des équipements de cuisine afin d’exploiter pleinement leur potentiel technique au quotidien.',
-                img: 'https://images.unsplash.com/photo-1577106263724-2c8e03bfe9cf?q=80&w=800&auto=format&fit=crop&fm=webp'
+                img: '/services/EQUINOX-cuisine-services-formation.png'
               },
               {
                 title: 'Maintenance',
                 desc: 'Assurer le suivi et la maintenance de votre cuisine professionnelle pour garantir sa performance, prolonger sa durée de vie et limiter les arrêts d’activité.',
-                img: 'https://images.unsplash.com/photo-1454692173233-f4f34c12adad?q=80&w=800&auto=format&fit=crop&fm=webp'
+                img: '/services/EQUINOX-cuisine-services-sav.png'
               },
               {
                 title: 'Intervention d’urgence',
                 desc: 'Répondre rapidement à vos imprévus techniques et garantir votre continuité de service grâce à une astreinte 24/7 dédiée à nos clients sous contrat.',
-                img: 'https://images.unsplash.com/photo-1517048676732-d65bc937f952?q=80&w=800&auto=format&fit=crop&fm=webp'
+                img: '/services/EQUINOX-cuisine-services-intervention-urgence.png'
               },
             ].map((service, i) => (
               <div key={i} className="group flex flex-col items-center text-center">
@@ -288,10 +295,10 @@ export const Home: React.FC = () => {
             <div className="w-full lg:w-1/2 relative group">
               <div className="aspect-video md:aspect-[2.5/1] lg:aspect-[4/5] w-full overflow-hidden rounded-sm relative bg-surfaceLight">
                 <img
-                  src="https://images.unsplash.com/photo-1577106263724-2c8e03bfe9cf?q=80&w=1200&auto=format&fit=crop&fm=webp"
+                  src="/vision/EQUINOX-cuisine-nice-vision.png"
                   alt="Vision Equinox"
                   loading="lazy"
-                  className="w-full h-full object-cover grayscale transition-all duration-700 group-hover:scale-105"
+                  className="w-full h-full object-cover transition-all duration-700 group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-60"></div>
               </div>
@@ -337,7 +344,7 @@ export const Home: React.FC = () => {
         {/* Background Image - Absolute Right 60% with vertical margin (top-12 bottom-12) */}
         <div className="absolute top-12 bottom-12 right-0 w-[80%] md:w-[70%] lg:w-[60%] z-0">
           <div className="w-full h-full bg-surfaceLight rounded-tl-[350px] rounded-bl-[350px] overflow-hidden relative shadow-2xl border-l border-y border-white/5">
-            <img src="https://images.unsplash.com/photo-1565557623262-b51c2513a641?q=80&w=1200&auto=format&fit=crop&fm=webp" className="w-full h-full object-cover opacity-80 transition-opacity duration-700" alt="Equinox Tech" loading="lazy" />
+            <img src="/chiffres_cles/EQUINOX-cuisine-chiffres.jpg" className="w-full h-full object-cover opacity-80 transition-opacity duration-700" alt="Equinox Tech" loading="lazy" />
             <div className="absolute inset-0 bg-gradient-to-r from-surface via-surface/60 to-transparent"></div>
           </div>
         </div>
@@ -352,7 +359,7 @@ export const Home: React.FC = () => {
                 <div className="flex items-center gap-6 mb-4">
                   {/* Pill - Updated Image */}
                   <div className="w-32 h-12 md:w-48 md:h-20 rounded-full overflow-hidden border border-white/20 relative shrink-0">
-                    <img src="https://images.unsplash.com/photo-1504754524776-8f4f37790ca0?q=80&w=600&auto=format&fit=crop&fm=webp" className="w-full h-full object-cover" alt="Detail" loading="lazy" />
+                    <img src="/chiffres_cles/EQUINOX-cuisine-monaco.png" className="w-full h-full object-cover" alt="Detail" loading="lazy" />
                     <div className="absolute inset-0 bg-primary/10 mix-blend-overlay"></div>
                   </div>
                   {/* Word 1 - Increased Size */}
@@ -413,7 +420,7 @@ export const Home: React.FC = () => {
               </h2>
 
               {/* BUBBLE STYLE BUTTON REPLACEMENT */}
-              <Link to="/portfolio" className="hidden md:inline-flex group relative items-center h-16 w-full max-w-[320px] cursor-pointer">
+              <Link to="/portfolio" className="hidden md:inline-flex group relative items-center h-16 w-full max-w-[350px] cursor-pointer">
                 <span className="absolute left-0 h-16 w-16 bg-white/5 rounded-full transition-all duration-500 ease-in-out group-hover:w-full group-hover:bg-primary border border-white/5"></span>
                 <span className="relative z-10 pl-6 text-sm font-bold tracking-[0.2em] uppercase text-white transition-colors whitespace-nowrap">
                   Voir toutes nos réalisations
@@ -443,9 +450,9 @@ export const Home: React.FC = () => {
           {/* Existing Cards Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-16">
             {[
-              { title: 'TAYAC', loc: 'Monaco', img: 'https://images.unsplash.com/photo-1578985545062-69928b1d9587?q=80&w=1989&auto=format&fit=crop', cat: 'Pâtisserie Haute Couture' },
-              { title: 'BAGNARD', loc: 'Aéroport Nice', img: 'https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?q=80&w=1981&auto=format&fit=crop', cat: 'Street Food Premium' },
-              { title: 'DOMAINE DES MAPLIERS', loc: 'Provence', img: 'https://images.unsplash.com/photo-1506377247377-2a5b3b417ebb?q=80&w=2070&auto=format&fit=crop', cat: 'Domaine Viticole' },
+              { title: 'TAYAC', loc: 'Monaco', img: '/tayac/EQUINOX-CUISINE_tayac.jpg', cat: 'Pâtisserie Haute Couture' },
+              { title: 'BAGNARD', loc: 'Aéroport Nice', img: '/bagnard/EQUINOX-CUISINE_bagnard.jpg', cat: 'Street Food Premium' },
+              { title: 'DOMAINE DES MAPLIERS', loc: 'Provence', img: '/mapliers/EQUINOX-CUISINE_domaine-mapliers.jpg', cat: 'Domaine Viticole' },
             ].map((project, i) => (
               <Link to="/portfolio" key={i} className="group relative block overflow-hidden rounded-xl bg-surfaceLight">
                 <div className="aspect-[4/3] overflow-hidden">
@@ -454,7 +461,6 @@ export const Home: React.FC = () => {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent p-8 flex flex-col justify-end">
                   <span className="text-primary text-xs font-bold uppercase tracking-widest mb-2">{project.loc}</span>
                   <h3 className="text-2xl font-display font-bold text-white mb-1 group-hover:text-primary transition-colors">{project.title}</h3>
-                  <p className="text-textMuted text-sm uppercase tracking-widest">{project.loc}</p>
                 </div>
               </Link>
             ))}
@@ -465,25 +471,6 @@ export const Home: React.FC = () => {
       {/* Partners & Trust (Sliding PILLS) */}
       <section className="py-24 bg-surface border-t border-white/5 overflow-hidden">
         <div className="container mx-auto px-6 mb-12">
-          <h5 className="text-center text-primary font-bold tracking-widest uppercase mb-12">Partenaires</h5>
-        </div>
-
-        {/* Partners Slider - Pill Style */}
-        <div className="relative w-full overflow-hidden mb-24">
-          <div className="flex w-[200%] animate-scroll">
-            {[...partners, ...partners, ...partners, ...partners].map((partner, i) => (
-              <div key={i} className="flex-shrink-0 mx-4 w-[200px] h-[80px] md:w-[260px] md:h-[100px] rounded-full bg-surfaceLight border border-white/10 flex justify-center items-center px-8 hover:border-primary/30 transition-colors duration-300">
-                <img
-                  src={`https://placehold.co/300x100/1E1E1E/FFFFFF/png?text=${partner}`}
-                  alt={partner}
-                  className="w-full h-full object-contain opacity-50 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-300"
-                />
-              </div>
-            ))}
-          </div>
-        </div>
-
-        <div className="container mx-auto px-6 mb-12">
           <h5 className="text-center text-primary font-bold tracking-widest uppercase mb-12">Ils nous font confiance</h5>
         </div>
 
@@ -493,9 +480,9 @@ export const Home: React.FC = () => {
             {[...clients, ...clients].map((client, i) => (
               <div key={i} className="flex-shrink-0 mx-4 w-[200px] h-[80px] md:w-[260px] md:h-[100px] rounded-full bg-surfaceLight border border-white/10 flex justify-center items-center px-6 hover:border-primary/30 transition-colors duration-300">
                 <img
-                  src={`https://placehold.co/250x100/1E1E1E/FFFFFF/png?text=${encodeURIComponent(client)}`}
-                  alt={client}
-                  className="w-full h-full object-contain opacity-40 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-300"
+                  src={client.img}
+                  alt={client.name}
+                  className="w-full h-full object-contain opacity-60 hover:opacity-100 transition-all duration-300"
                 />
               </div>
             ))}

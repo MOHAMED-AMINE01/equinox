@@ -77,7 +77,7 @@ export const Services: React.FC = () => {
 
   const benefits = [
     {
-      title: "Zone accueil et de service (front of house)",
+      title: "Zones accueil et de service (front of house)",
       desc: "Ce que vos clients voient et ressentent, est bien plus qu’un décor : c’est la première expression de votre marque, un lieu d’émotion et de mise en scène culinaire. Nos équipes traduisent votre vision en un environnement fonctionnel, esthétique et parfaitement maîtrisé, où design, ergonomie et ambiance concourent à un seul objectif : valoriser votre savoir-faire et sublimer l’expérience de vos clients."
     },
     {
@@ -85,7 +85,7 @@ export const Services: React.FC = () => {
       desc: "C’est le cœur invisible de votre performance. Là où chaque geste, chaque flux et chaque équipement sont pensés pour garantir efficacité, sécurité et régularité du service. C’est également ici que notre expertise prend toute sa valeur : concevoir des cuisines professionnelles sur mesure, performantes et durables, adaptées à vos volumes et à vos ambitions."
     },
     {
-      title: "Cuisine privée",
+      title: "Cuisines privées",
       desc: "Grâce à notre expérience dans le secteur CHR, nous accompagnons aussi bien les établissements de restauration, d’hôtellerie et de luxe que les espaces résidentiels haut de gamme, où la frontière entre cuisine professionnelle et cuisine privée devient plus fluide que jamais. Notre approche : mettre la précision du monde pro au service de la convivialité, du confort et de l’excellence, quel que soit le cadre."
     }
   ];
@@ -97,11 +97,11 @@ export const Services: React.FC = () => {
       <div className="relative h-[60vh] min-h-[500px] w-full flex flex-col justify-center items-center overflow-hidden border-b border-white/5 pt-32 text-center px-6">
         <div className="absolute inset-0">
           <img
-            src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?q=80&w=2070&auto=format&fit=crop"
+            src="/services_page/EQUINOX-cuisine-services_conception.jpg"
             alt="Services Header"
-            className="w-full h-full object-cover grayscale scale-105"
+            className="w-full h-full object-cover scale-105"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-black/80"></div>
+          <div className="absolute inset-0 bg-gradient-to-t from-background via-background/10 to-black/40"></div>
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-transparent to-background/90"></div>
         </div>
 
@@ -130,7 +130,7 @@ export const Services: React.FC = () => {
               </div>
 
               <h2 className="text-4xl md:text-5xl xl:text-6xl font-display font-bold leading-[1.1] mb-8">
-                Des solutions sur mesure pour des cuisines professionnelles performantes.
+                Des solutions sur mesure
               </h2>
 
               <div className="text-textMuted text-lg leading-relaxed space-y-8">
@@ -252,9 +252,9 @@ export const Services: React.FC = () => {
               <div className="relative group">
                 <div className="aspect-[5/5] rounded-xl overflow-hidden border border-white/10 shadow-2xl">
                   <img
-                    src="/mapliers/EQUINOX-CUISINE_domaine-mappliers-ombra.jpg"
+                    src="/services_page/EQUINOX-Cafe-de-Turin-nice.jpg"
                     alt="Savoir-faire Equinox"
-                    className="w-full h-full object-cover grayscale transition-all duration-700 group-hover:scale-110 group-hover:grayscale-0"
+                    className="w-full h-full object-cover transition-all duration-700 group-hover:scale-110"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-transparent to-transparent"></div>
                 </div>

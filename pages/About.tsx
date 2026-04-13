@@ -19,7 +19,7 @@ export const About: React.FC = () => {
          <div className="relative h-[60vh] min-h-[500px] w-full flex flex-col justify-center items-center overflow-hidden border-b border-white/5 pt-32">
             <div className="absolute inset-0">
                <img
-                  src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=600&auto-format&fit=crop"
+                  src="/apropos_page/EQUINOX-cuisine-installation_monaco.jpg"
                   alt="About Header"
                   className="w-full h-full object-cover scale-105"
                />
@@ -41,7 +41,7 @@ export const About: React.FC = () => {
                <div className="flex flex-col lg:flex-row gap-12 md:gap-16 items-center">
                   <div className="lg:w-1/2 relative">
                      <div className="relative z-10 rounded-sm overflow-hidden aspect-square md:aspect-[4/5] w-full max-w-md mx-auto lg:max-w-none lg:mx-0 shadow-2xl border border-white/10">
-                        <img src="https://images.unsplash.com/photo-1577106263724-2c8e03bfe9cf?q=80&w=2000&auto=format&fit=crop" alt="Team Equinox" className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700" />
+                        <img src="/apropos_page/EQUINOX-Cafe-de-Turin-grande-cuisine.jpg" alt="Team Equinox" className="w-full h-full object-cover transition-all duration-700" />
                      </div>
                      {/* Decorative elements */}
                      {/* <div className="absolute -bottom-10 -right-10 w-2/3 h-2/3 border border-primary/30 -z-0 hidden md:block"></div> */}
@@ -241,7 +241,7 @@ export const About: React.FC = () => {
             <div className="flex w-fit animate-scroll">
                {[...Array(5)].map((_, i) => (
                   <div key={i} className="flex items-center shrink-0 mx-8">
-                     <h2 className="text-5xl md:text-7xl font-display font-bold uppercase tracking-tighter whitespace-nowrap">NOTRE ÉQUIPE</h2>
+                     <h2 className="text-5xl md:text-7xl font-display font-bold uppercase tracking-tighter whitespace-nowrap">NOTRE ZONE D'INTERVENTION</h2>
                      <div className="w-12 h-12 md:w-20 md:h-20 bg-[#CDBF98] mx-8 shrink-0"
                         style={{
                            maskImage: 'url(/EQUINOX-LOGO_monogramme_B.png)',
@@ -259,50 +259,7 @@ export const About: React.FC = () => {
             </div>
          </section>
 
-         {/* TEAM SECTION - NEW DESIGN */}
-         <section className="py-16 md:py-24 bg-background border-y border-white/5">
-            <div className="container mx-auto px-6">
-               <div className="text-center mb-12 md:mb-16 max-w-3xl mx-auto">
-                  <span className="text-primary font-bold tracking-widest uppercase text-sm mb-4 block">Notre Équipe</span>
-                  <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold">Des experts passionnés à votre service.</h2>
-                  <p className="text-textMuted text-lg mt-6">
-                     Notre force réside dans la complémentarité de nos talents. Chaque membre apporte une expertise unique pour garantir la réussite de votre projet, de la conception à la maintenance.
-                  </p>
-               </div>
 
-               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-12">
-                  {[
-                     {
-                        name: 'Jean Dupont',
-                        role: 'Fondateur & Gérant',
-                        img: 'https://images.unsplash.com/photo-1599566150163-29194dcaad36?q=80&w=600&auto=format&fit=crop'
-                     },
-                     {
-                        name: 'Marie Dubois',
-                        role: 'Chef de Projet & Conception',
-                        img: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=600&auto=format&fit=crop'
-                     },
-                     {
-                        name: 'Lucas Martin',
-                        role: 'Responsable Technique',
-                        img: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=600&auto=format&fit=crop'
-                     },
-                  ].map((member, index) => (
-                     <div key={index} className="text-center group">
-                        <div className="relative w-full aspect-[4/5] overflow-hidden rounded-xl mb-6 shadow-lg bg-background">
-                           <img
-                              src={member.img}
-                              alt={`Portrait de ${member.name}`}
-                              className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500 ease-in-out"
-                           />
-                        </div>
-                        <h3 className="text-xl md:text-2xl font-display font-bold text-white group-hover:text-primary transition-colors">{member.name}</h3>
-                        <p className="text-textMuted">{member.role}</p>
-                     </div>
-                  ))}
-               </div>
-            </div>
-         </section>
 
          {/* ZONE D'INTERVENTION SECTION */}
          <section className="py-24 bg-surface border-y border-white/5 relative overflow-hidden">

@@ -16,11 +16,11 @@ export const Portfolio: React.FC = () => {
       <div className="relative h-[50vh] min-h-[400px] w-full flex flex-col justify-center items-center overflow-hidden border-b border-white/5 pt-32">
         <div className="absolute inset-0">
           <img
-            src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?q=80&w=2000&auto=format&fit=crop"
+            src="/realisations_list/EQUINOX-cuisine-CHR_collectivites.png"
             alt="Portfolio Header"
-            className="w-full h-full object-cover grayscale scale-105"
+            className="w-full h-full object-cover scale-105"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-black/80"></div>
+          <div className="absolute inset-0 bg-gradient-to-t from-background via-background/10 to-black/40"></div>
         </div>
         <div className="relative z-10 text-center animate-up">
           <h1 className="text-5xl md:text-7xl font-display font-bold uppercase tracking-tight mb-8 drop-shadow-2xl">

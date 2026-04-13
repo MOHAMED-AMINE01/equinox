@@ -12,6 +12,7 @@ export interface Project {
   solution: {
     intro: string;
     points: string[];
+    outro?: string;
   };
   result: string;
 }

@@ -4,13 +4,13 @@ export const Privacy: React.FC = () => {
     return (
         <div className="bg-background text-white">
             {/* HERO SECTION */}
-            <div className="relative h-[40vh] min-h-[300px] w-full flex flex-col justify-center items-center overflow-hidden border-b border-white/5 pt-24">
+            <div className="relative h-[60vh] min-h-[300px] w-full flex flex-col justify-center items-center overflow-hidden border-b border-white/5 pt-24">
                 <img
-                    src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1920&auto=format&fit=crop&fm=webp"
+                    src="/ML_PC/EQUINOX-laverie-plonge-traitement-grandes-cuisines.png"
                     alt="Politique de Confidentialité"
                     className="absolute inset-0 w-full h-full object-cover opacity-40"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-black/80"></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-background via-background/10 to-black/40"></div>
                 <div className="relative z-10 text-center">
                     <h1 className="text-4xl md:text-6xl font-display font-bold uppercase tracking-tight mb-4 text-white">
                         Politique de Confidentialité

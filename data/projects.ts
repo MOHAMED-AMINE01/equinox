@@ -7,7 +7,7 @@ export const projectsData: Project[] = [
     category: 'Pâtisserie',
     location: 'Monaco',
     year: '2024',
-    image: 'https://images.unsplash.com/photo-1578985545062-69928b1d9587?q=80&w=1920&auto=format&fit=crop&fm=webp',
+    image: '/tayac/EQUINOX-CUISINE_tayac.jpg',
     gallery: [
       '/tayac/EQUINOX-CUISINE_patisserie-tayac-monaco-03.jpg',
       '/tayac/EQUINOX-CUISINE_patisserie-tayac-monaco-05.jpg',
@@ -32,7 +32,7 @@ export const projectsData: Project[] = [
     category: 'Restauration',
     location: 'Aéroport de Nice',
     year: '2024',
-    image: 'https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?q=80&w=1920&auto=format&fit=crop&fm=webp',
+    image: '/bagnard/EQUINOX-CUISINE_bagnard.jpg',
     gallery: [
       'bagnard/EQUINOX-CUISINE_restaurant-bagnard-aeroport.jpg',
       'bagnard/EQUINOX-CUISINE_vitrine-refrigeree.jpg',
@@ -59,7 +59,7 @@ export const projectsData: Project[] = [
     category: 'Viticole',
     location: 'Lorgues',
     year: '2023',
-    image: 'https://images.unsplash.com/photo-1506377247377-2a5b3b417ebb?q=80&w=1920&auto=format&fit=crop&fm=webp',
+    image: 'mapliers/EQUINOX-CUISINE_domaine-mapliers.jpg',
     gallery: [
       'mapliers/EQUINOX-CUISINE_domaine-des-mappliers.jpg',
       'mapliers/EQUINOX-CUISINE_bar-degustation.jpg',
@@ -119,7 +119,7 @@ export const projectsData: Project[] = [
     category: 'Restauration',
     location: 'Monaco',
     year: '2025',
-    image: 'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?q=80&w=1920&auto=format&fit=crop&fm=webp',
+    image: 'moshi/EQUINOX-CUISINE_moshi-moshi.jpg',
     gallery: [
       'moshi/EQUINOX-CUISINE_moshimoshi-monaco_7.jpg',
       'moshi/EQUINOX-CUISINE_moshimoshi-coldline.jpg',
@@ -143,7 +143,7 @@ export const projectsData: Project[] = [
     category: 'Hybride',
     location: 'Cannes',
     year: '2025',
-    image: 'https://images.unsplash.com/photo-1504674900247-0877df9cc836?q=80&w=1920&auto=format&fit=crop&fm=webp',
+    image: 'loma/EQUINOX-CUISINE_loma.jpg',
     gallery: [
       'loma/EQUINOX-CUISINE_restaurant-loma.jpg',
       'loma/EQUINOX-CUISINE_giorik.jpg',
@@ -162,5 +162,44 @@ export const projectsData: Project[] = [
       ]
     },
     result: `LOMA dispose aujourd’hui d’une infrastructure technique complète, pensée comme un véritable outil au service de l’expérience client. La cuisine, le bar, la chambre froide et la laverie forment un ensemble fluide et harmonieux, permettant aux équipes de travailler avec sérénité, précision et efficacité, que ce soit pour le service quotidien du restaurant, la gestion de l’épicerie fine ou l’accueil d’événements privés.\nCette réalisation illustre la capacité d’EQUINOX à concevoir des projets sur mesure pour des lieux hybrides et exigeants, où performance technique et élégance se conjuguent au service d’une expérience gourmande authentique et raffinée. EQUINOX remercie l’équipe de LOMA pour sa confiance dans l’accompagnement de ce projet ambitieux, où chaque détail compte pour sublimer les moments partagés.`
+  },
+  {
+    id: 7,
+    title: 'CAFÉ DE TURIN',
+    category: 'Restauration',
+    location: 'Nice',
+    year: '2024',
+    image: '/cafe_turin/EQUINOX-CUISINE_restaurant-Cafe-de-turin-nice.jpg',
+    gallery: [
+      '/cafe_turin/EQUINOX-CUISINE_Cafe-de-turin-cote-d-azur.jpg',
+      '/cafe_turin/EQUINOX-CUISINE_Cafe-de-turin-nice-06.jpg',
+      '/cafe_turin/EQUINOX-CUISINE_restaurant-Cafe-de-turin-06.jpg',
+      '/cafe_turin/EQUINOX-CUISINE_Cuisine-professionnelle.jpg',
+      '/cafe_turin/EQUINOX-CUISINE_Cuisines-professionnelles.jpg',
+      '/cafe_turin/EQUINOX-CUISINE_conception-cuisines-professionnelles.jpg',
+      '/cafe_turin/EQUINOX-CUISINE_conception-grandes-cuisines.jpg',
+      '/cafe_turin/EQUINOX-CUISINE_cuisine-restaurant-cote-d-azur.jpg',
+      '/cafe_turin/EQUINOX-CUISINE_Conception-chambres-froides.jpg',
+      '/cafe_turin/EQUINOX-CUISINE_Maintenance-cuisines-professionnelles.jpg',
+      '/cafe_turin/EQUINOX-CUISINE_cuisines-professionnelles-plonge.jpg',
+      '/cafe_turin/EQUINOX-CUISINE_grandes-cuisines-lave-vaisselles .jpg',
+      '/cafe_turin/EQUINOX-CUISINE_grandes-cuisines-plonge.jpg',
+      '/cafe_turin/EQUINOX-CafeTurin-eqx-9.jpg'
+    ],
+    challenge: `Institution niçoise depuis 1908, le Café de Turin est bien plus qu'un restaurant : c'est une adresse mythique, ancrée dans l'identité de la ville et de sa gastronomie. Derrière l'expérience en salle, c'est toute une organisation de production qui devait être repensée de fond en comble pour répondre aux exigences d'un établissement de ce rang.\n\nL'enjeu était clair : concevoir une cuisine professionnelle et une laverie entièrement sur mesure, capables d'absorber des cadences élevées, tout en s'intégrant parfaitement dans les contraintes architecturales existantes. Chaque centimètre comptait. Chaque équipement devait être pensé en cohérence avec les autres, pour garantir fluidité des flux, sécurité alimentaire et confort de travail pour les équipes.`,
+    solution: {
+      intro: `EQUINOX a assuré la conception et l'installation complète de la cuisine et de la laverie, en prenant en charge le projet dans sa globalité — du plan d'implantation au choix des équipements, jusqu'à la mise en service finale.`,
+      points: [
+        `Ligne de cuisson CHARVET, véritable colonne vertébrale de la cuisine, conçue pour offrir une puissance et une précision à la hauteur des volumes traités, avec une robustesse pensée pour le long terme.`,
+        `Four CONVOTHERM Maxx, intégré au cœur du dispositif de cuisson, pour une maîtrise parfaite des cuissons combinées, une régularité exemplaire et une montée en cadence sans compromis sur la qualité.`,
+        `Salamandres et pont chauffant, pour assurer la finition et le maintien en température avec réactivité, quel que soit le rythme du service.`,
+        `Armoires et modules réfrigérés COLDLINE, sélectionnés pour leur fiabilité et leur efficacité énergétique, garantissant une parfaite maîtrise de la chaîne du froid.`,
+        `Meubles bas et armoires murales en inox, plans de travail et chambres froides, conçus sur mesure pour optimiser chaque poste et respecter les contraintes spécifiques des locaux.`,
+        `Hotte inox dimensionnée précisément pour répondre aux normes en vigueur et assurer un environnement de travail sain et agréable.`,
+        `Laverie complète : plonge inox, lave-vaisselle à capot HOBART et robinetteries professionnelles, pensés pour fluidifier les retours de vaisselle et maintenir un débit constant tout au long du service.`
+      ],
+      outro: `L'ensemble a été implanté au millimètre, dans une logique de cohérence totale entre les postes, pour que la cuisine fonctionne comme un seul et même outil.`
+    },
+    result: `La nouvelle cuisine du Café de Turin allie puissance et précision dans un espace entièrement maîtrisé. Les équipes disposent désormais d'un outil à la hauteur de l'institution : fluide, ergonomique, fiable, conçu pour encaisser les services les plus soutenus sans jamais fléchir.\n\nLe choix de partenaires exigeants — CHARVET, CONVOTHERM, COLDLINE, HOBART — reflète la même philosophie qui guide chaque projet EQUINOX : ne rien laisser au hasard, et ne proposer que ce qui a été rigoureusement évalué et validé pour l'usage concerné.\n\nNous remercions les équipes du Café de Turin pour leur confiance et leur implication tout au long du projet. C'est cette relation de proximité, dès la phase de conception, qui permet d'aboutir à des installations qui durent et qui performent.`
   }
 ];

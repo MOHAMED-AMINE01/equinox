@@ -1,3 +1,9 @@
+import React, { FC, useState, useEffect } from 'react';
+import './ProjectDetails.css';
+import { useParams, Link, useNavigate } from 'react-router-dom';
+import { projectsData } from '../data/projects';
+import { ArrowLeft, ArrowRight, CheckCircle } from 'lucide-react';
+
 // Desktop gallery carousel: auto-shifts images every 2s (desktop only)
 
 // Pour afficher les détails, on suppose que chaque image est un objet { src, title?, description? }
@@ -117,11 +123,7 @@ function DesktopGalleryCarousel({ images }: { images: (string | { src: string })
     </>
   );
 }
-import React, { FC, useState, useEffect } from 'react';
-import './ProjectDetails.css';
-import { useParams, Link, useNavigate } from 'react-router-dom';
-import { projectsData } from '../data/projects';
-import { ArrowLeft, ArrowRight, CheckCircle } from 'lucide-react';
+
 
 // Carousel component with modal and navigation arrows
 const Carousel: React.FC<{ images: string[] }> = ({ images }) => {
@@ -214,6 +216,37 @@ const Carousel: React.FC<{ images: string[] }> = ({ images }) => {
           </div>
         </div>
       )}
+    </>
+  );
+};
+
+// Component to show 2 random related projects, re-shuffled on each project change
+const RelatedProjects: React.FC<{ currentId: number }> = ({ currentId }) => {
+  const [related, setRelated] = useState<typeof projectsData>([]);
+
+  useEffect(() => {
+    const otherProjects = projectsData.filter(p => p.id !== currentId);
+    // Fisher-Yates shuffle for true randomness
+    const shuffled = [...otherProjects];
+    for (let i = shuffled.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+    }
+    setRelated(shuffled.slice(0, 2));
+  }, [currentId]);
+
+  return (
+    <>
+      {related.map(relatedProject => (
+        <Link to={`/portfolio/${relatedProject.id}`} key={relatedProject.id} className="group block text-left">
+          <div className="overflow-hidden mb-6">
+            <img src={relatedProject.image} alt={relatedProject.title} className="w-full h-auto object-cover aspect-[4/3] transition-transform duration-500 ease-in-out group-hover:scale-110" />
+          </div>
+          <div>
+            <h3 className="text-3xl font-display font-bold text-white group-hover:text-primary transition-colors duration-300">{relatedProject.title}</h3>
+          </div>
+        </Link>
+      ))}
     </>
   );
 };
@@ -336,6 +369,9 @@ export const ProjectDetails: React.FC = () => {
                   </li>
                 ))}
               </ul>
+              {project.solution.outro && (
+                <p className="pt-4">{project.solution.outro}</p>
+              )}
             </div>
           </div>
 
@@ -360,21 +396,7 @@ export const ProjectDetails: React.FC = () => {
         <div className="container mx-auto px-6">
           <h2 className="text-4xl font-display font-bold mb-12 text-center">Nos réalisations</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-12 max-w-5xl mx-auto">
-            {React.useMemo(() => {
-              const otherProjects = projectsData.filter(p => p.id !== project.id);
-              return [...otherProjects]
-                .sort(() => Math.random() - 0.5)
-                .slice(0, 2);
-            }, [project.id]).map(relatedProject => (
-              <Link to={`/portfolio/${relatedProject.id}`} key={relatedProject.id} className="group block text-left">
-                <div className="overflow-hidden mb-6">
-                  <img src={relatedProject.image} alt={relatedProject.title} className="w-full h-auto object-cover aspect-[4/3] transition-transform duration-500 ease-in-out group-hover:scale-110" />
-                </div>
-                <div>
-                  <h3 className="text-3xl font-display font-bold text-white group-hover:text-primary transition-colors duration-300">{relatedProject.title}</h3>
-                </div>
-              </Link>
-            ))}
+            <RelatedProjects currentId={project.id} />
           </div>
         </div>
       </section>
