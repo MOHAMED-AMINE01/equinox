@@ -38,9 +38,9 @@ export const About: React.FC = () => {
          {/* QUI SOMMES NOUS */}
          <section className="py-16 md:py-24">
             <div className="container mx-auto px-6">
-               <div className="flex flex-col lg:flex-row gap-12 md:gap-16 items-center">
-                  <div className="lg:w-1/2 relative">
-                     <div className="relative z-10 rounded-sm overflow-hidden aspect-square md:aspect-[4/5] w-full max-w-md mx-auto lg:max-w-none lg:mx-0 shadow-2xl border border-white/10">
+               <div className="flex flex-col lg:flex-row gap-12 md:gap-16 items-center lg:items-stretch">
+                  <div className="w-full lg:w-1/2 relative">
+                     <div className="relative lg:absolute lg:inset-0 z-10 rounded-sm overflow-hidden aspect-square md:aspect-[4/5] lg:aspect-auto h-full w-full max-w-md mx-auto lg:max-w-none lg:mx-0 shadow-2xl border border-white/10">
                         <img src="/apropos_page/EQUINOX-Cafe-de-Turin-grande-cuisine.jpg" alt="Team Equinox" className="w-full h-full object-cover transition-all duration-700" />
                      </div>
                      {/* Decorative elements */}

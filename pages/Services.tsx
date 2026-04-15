@@ -10,7 +10,7 @@ interface ServiceItem {
 }
 
 export const Services: React.FC = () => {
-  const [openBenefit, setOpenBenefit] = useState<number | null>(0);
+  const [openBenefit, setOpenBenefit] = useState<number | null>(-1);
 
   const services: ServiceItem[] = [
     {
@@ -135,22 +135,13 @@ export const Services: React.FC = () => {
 
               <div className="text-textMuted text-lg leading-relaxed space-y-8">
                 <p>
-                  Chez EQUINOX, chaque projet de cuisine professionnelle est pensé comme un véritable outil de performance, au service des acteurs de la restauration et de l’hospitalité à Monaco et sur la Côte d’Azur. Nous accompagnons les restaurants, hôtels, métiers de bouche et collectivités à chaque étape, de l’idée à l’entretien, en tant que partenaire technique spécialisé en cuisines professionnelles sur mesure.
+                  Chez EQUINOX, chaque projet de cuisine professionnelle est pensé comme un véritable outil de performance. Nous accompagnons les restaurants, hôtels, métiers de bouche et collectivités à chaque étape, de l’idée à l’entretien.
                 </p>
                 <p>
-                  Grâce à une expertise complète – conseil, conception, installation, formation, maintenance et intervention d’urgence – nous créons des cuisines fonctionnelles, fiables et durables, parfaitement adaptées aux contraintes des établissements CHR. Notre mission est de vous permettre d’optimiser vos performances en toute sérénité, avec des équipements de qualité, une installation conforme aux normes et un accompagnement personnalisé, avant, pendant et après la mise en service de votre cuisine professionnelle.
+                  Grâce à une expertise complète nous créons des cuisines fonctionnelles, fiables et durables, parfaitement adaptées aux contraintes des établissements CHR. Notre mission est de vous permettre d’optimiser vos performances, avec des équipements de qualité, des installations conformes aux normes et un accompagnement personnalisé, avant, pendant et après la mise en service de votre cuisine professionnelle.
                 </p>
               </div>
 
-              {/* Action Button */}
-              <div className="mt-12">
-                <Link to="/contact" className="group relative inline-flex items-center h-16 w-full max-w-[320px] cursor-pointer">
-                  <span className="absolute left-0 h-16 w-16 bg-white/5 rounded-full transition-all duration-500 ease-in-out group-hover:w-full group-hover:bg-primary border border-white/5"></span>
-                  <span className="relative z-10 pl-6 text-sm font-bold tracking-[0.2em] uppercase text-white transition-colors whitespace-nowrap">
-                    Démarrer un projet
-                  </span>
-                </Link>
-              </div>
             </div>
           </div>
 
@@ -246,11 +237,11 @@ export const Services: React.FC = () => {
         </div>
 
         <div className="container mx-auto px-6">
-          <div className="flex flex-col lg:flex-row gap-16 items-center">
+          <div className="flex flex-col lg:flex-row gap-16 items-center lg:items-stretch">
             {/* Left Image Side */}
-            <div className="w-full lg:w-1/2">
-              <div className="relative group">
-                <div className="aspect-[5/5] rounded-xl overflow-hidden border border-white/10 shadow-2xl">
+            <div className="w-full lg:w-1/2 relative">
+              <div className="relative lg:absolute lg:inset-0 group h-full w-full">
+                <div className="aspect-[5/4] lg:aspect-auto h-full w-full rounded-xl overflow-hidden border border-white/10 shadow-2xl">
                   <img
                     src="/services_page/EQUINOX-Cafe-de-Turin-nice.jpg"
                     alt="Savoir-faire Equinox"
@@ -274,7 +265,7 @@ export const Services: React.FC = () => {
               </div>
 
               {/* Benefits List - Accordion */}
-              <div className="space-y-8">
+              <div className="space-y-6">
                 {benefits.map((item, idx) => (
                   <div
                     key={idx}

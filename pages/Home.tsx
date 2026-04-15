@@ -7,12 +7,12 @@ export const Home: React.FC = () => {
   // Data for client logos
   const clients = [
     { name: 'Aéroport de Nice', img: '/LOGOS CLIENTS/B_Aeroport_Nice_Cote_d_Azur_logo.png' },
-    { name: 'AS Monaco', img: '/LOGOS CLIENTS/B_AS-monaco.png' },
-    { name: 'Royal Mougins', img: '/LOGOS CLIENTS/B_Logo+Royal+Mougins.png' },
-    { name: 'Mairie de Monaco', img: '/LOGOS CLIENTS/B_Mairie_de_Monaco_logo.png' },
-    { name: 'Monte-Carlo SBM', img: '/LOGOS CLIENTS/B_montecarlo-1.png' },
-    { name: 'Groupe Barrière', img: '/LOGOS CLIENTS/B_logo-groupe-barriere-21683efd0f2d7f3.png' },
-    { name: 'Lagardère', img: '/LOGOS CLIENTS/B_Lagardere.png' },
+    { name: 'AS Monaco', img: '/LOGOS CLIENTS/B_AS-monaco.png', scale: 0.8 },
+    { name: 'Royal Mougins', img: '/LOGOS CLIENTS/B_Logo+Royal+Mougins.png', scale: 0.9 },
+    { name: 'Mairie de Monaco', img: '/LOGOS CLIENTS/B_Mairie_de_Monaco_logo.png', scale: 0.9 },
+    { name: 'Monte-Carlo SBM', img: '/LOGOS CLIENTS/B_montecarlo-1.png', scale: 1.4 },
+    { name: 'Groupe Barrière', img: '/LOGOS CLIENTS/B_logo-groupe-barriere-21683efd0f2d7f3.png', scale: 1.5 },
+    { name: 'Lagardère', img: '/LOGOS CLIENTS/B_Lagardere.png', scale: 1.3 },
     { name: 'Sodexo', img: '/LOGOS CLIENTS/B_sodexo.png' },
     { name: 'SSP', img: '/LOGOS CLIENTS/B_SSP.png' },
     { name: 'Ville de Nice', img: '/LOGOS CLIENTS/B_ville-de-nice-logo.png' },
@@ -42,8 +42,8 @@ export const Home: React.FC = () => {
           animation: scroll-reverse 60s linear infinite;
         }
         @keyframes scroll-reverse {
-          0% { transform: translateX(0); }
-          100% { transform: translateX(50%); }
+          0% { transform: translateX(-50%); }
+          100% { transform: translateX(0); }
         }
         .delay-100 { animation-delay: 100ms; }
         .delay-200 { animation-delay: 200ms; }
@@ -75,14 +75,14 @@ export const Home: React.FC = () => {
         </div>
 
         {/* Content Container */}
-        <div className="container mx-auto px-6 relative z-10 lg:pl-32 flex flex-col justify-center lg:pt-5">
+        <div className="container mx-auto px-6 relative z-10 lg:pl-32 flex flex-col justify-center lg:pt-10">
           <div className="max-w-5xl">
 
             {/* 1. Top Pill Image + Text */}
             <div className="flex flex-col md:flex-row items-start md:items-center gap-6 md:gap-8 mb-8 animate-up delay-100">
               {/* Image Pill */}
               <div className="w-48 h-16 md:w-64 md:h-20 rounded-full overflow-hidden border border-white/20 shadow-lg shrink-0 relative group">
-                <img src="/equinox-hp-plan-conception.png" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" alt="Detail" />
+                <img src="/equinox-hp-plan-conception_2.png" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" alt="Detail" />
                 <div className="absolute inset-0 bg-primary/20 mix-blend-overlay"></div>
               </div>
               {/* Text */}
@@ -112,32 +112,22 @@ export const Home: React.FC = () => {
 
             {/* 4. Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 items-start sm:items-center animate-up delay-400">
-              <Link to="/contact" className="w-full sm:w-auto">
+              <a href="mailto:contact@equinox.mc?subject=Discussion sur mon projet de cuisine professionnelle" className="w-full sm:w-auto">
                 <Button size="lg" className="w-full sm:w-auto px-10 py-5 text-lg group shadow-lg shadow-primary/20 justify-between sm:justify-center">
                   <span className="relative z-10">Discutons de votre projet</span>
                   <ArrowUpRight className="ml-2 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" size={20} />
                 </Button>
-              </Link>
-              <Link to="/contact" className="w-full sm:w-auto">
+              </a>
+              <a href="tel:+33493989339" className="w-full sm:w-auto">
                 <Button variant="outline" size="lg" className="w-full sm:w-auto px-10 py-5 text-lg hover:bg-white/5 backdrop-blur-sm justify-center">
                   Demander un devis
                 </Button>
-              </Link>
+              </a>
             </div>
           </div>
         </div>
 
-        {/* Footer Info: Mail & Call (Relative on mobile to flow naturally, Absolute on desktop) */}
-        <div className="mt-16 lg:absolute lg:bottom-7 lg:left-60 z-30 px-6 lg:px-0 flex flex-col sm:flex-row gap-8 sm:gap-12 text-xs font-bold tracking-widest uppercase text-white/50 animate-up delay-500">
-          <a href="mailto:contact@equinox.mc" className="hover:text-white transition-colors cursor-pointer group flex items-baseline gap-3">
-            <span className="text-primary">E-MAIL</span>
-            <span className="text-white border-b border-transparent group-hover:border-white transition-all">contact@equinox.mc</span>
-          </a>
-          <a href="tel:+33493989339" className="hover:text-white transition-colors cursor-pointer group flex items-baseline gap-3">
-            <span className="text-primary">TÉLÉPHONE</span>
-            <span className="text-white border-b border-transparent group-hover:border-white transition-all">+33 4 93 98 93 39</span>
-          </a>
-        </div>
+
 
       </section>
 
@@ -289,18 +279,20 @@ export const Home: React.FC = () => {
       {/* Vision Section */}
       <section className="py-24 lg:py-32 bg-background relative overflow-hidden">
         <div className="container mx-auto px-6">
-          <div className="flex flex-col-reverse lg:flex-row gap-12 lg:gap-24 items-start">
+          <div className="flex flex-col-reverse lg:flex-row gap-12 lg:gap-24 items-start lg:items-stretch">
 
             {/* Left: Image (Grayscale Portrait style) */}
-            <div className="w-full lg:w-1/2 relative group">
-              <div className="aspect-video md:aspect-[2.5/1] lg:aspect-[4/5] w-full overflow-hidden rounded-sm relative bg-surfaceLight">
-                <img
-                  src="/vision/EQUINOX-cuisine-nice-vision.png"
-                  alt="Vision Equinox"
-                  loading="lazy"
-                  className="w-full h-full object-cover transition-all duration-700 group-hover:scale-105"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-60"></div>
+            <div className="w-full lg:w-1/2 relative">
+              <div className="relative lg:absolute lg:inset-0 group h-full w-full">
+                <div className="aspect-[5/4] lg:aspect-auto h-full w-full rounded-xl overflow-hidden border border-white/10 shadow-2xl">
+                  <img
+                    src="/vision/EQUINOX-cuisine-nice-vision.png"
+                    alt="Vision Equinox"
+                    loading="lazy"
+                    className="w-full h-full object-cover transition-all duration-700 group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-60"></div>
+                </div>
               </div>
             </div>
 
@@ -450,11 +442,11 @@ export const Home: React.FC = () => {
           {/* Existing Cards Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-16">
             {[
-              { title: 'TAYAC', loc: 'Monaco', img: '/tayac/EQUINOX-CUISINE_tayac.jpg', cat: 'Pâtisserie Haute Couture' },
-              { title: 'BAGNARD', loc: 'Aéroport Nice', img: '/bagnard/EQUINOX-CUISINE_bagnard.jpg', cat: 'Street Food Premium' },
-              { title: 'DOMAINE DES MAPLIERS', loc: 'Provence', img: '/mapliers/EQUINOX-CUISINE_domaine-mapliers.jpg', cat: 'Domaine Viticole' },
+              { id: '1', title: 'TAYAC', loc: 'Monaco', img: '/tayac/EQUINOX-CUISINE_tayac.jpg', cat: 'Pâtisserie Haute Couture' },
+              { id: '2', title: 'BAGNARD', loc: 'Aéroport Nice', img: '/bagnard/EQUINOX-CUISINE_bagnard.jpg', cat: 'Street Food Premium' },
+              { id: '3', title: 'DOMAINE DES MAPLIERS', loc: 'Provence', img: '/mapliers/EQUINOX-CUISINE_domaine-mapliers.jpg', cat: 'Domaine Viticole' },
             ].map((project, i) => (
-              <Link to="/portfolio" key={i} className="group relative block overflow-hidden rounded-xl bg-surfaceLight">
+              <Link to={`/portfolio/${project.id}`} key={project.id} className="group relative block overflow-hidden rounded-xl bg-surfaceLight">
                 <div className="aspect-[4/3] overflow-hidden">
                   <img src={project.img} alt={project.title} loading="lazy" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
                 </div>
@@ -466,32 +458,59 @@ export const Home: React.FC = () => {
             ))}
           </div>
         </div>
-      </section>
+      </section >
 
-      {/* Partners & Trust (Sliding PILLS) */}
-      <section className="py-24 bg-surface border-t border-white/5 overflow-hidden">
-        <div className="container mx-auto px-6 mb-12">
-          <h5 className="text-center text-primary font-bold tracking-widest uppercase mb-12">Ils nous font confiance</h5>
+      {/* Partners & Trust (Double Sliding Rows) */}
+      < section className="py-32 bg-surface border-t border-white/5 overflow-hidden relative" >
+        <div className="container mx-auto px-6 mb-20">
+          <div className="flex flex-col items-center">
+            <span className="text-primary font-bold tracking-[0.3em] uppercase text-xs mb-4">Partenaires technique</span>
+            <h5 className="text-3xl md:text-4xl font-display font-bold text-center">Ils nous font confiance</h5>
+          </div>
         </div>
 
-        {/* Trust Slider - Pill Style */}
+        {/* Trust Slider Container with Faded Edges */}
         <div className="relative w-full overflow-hidden">
-          <div className="flex w-[400%] animate-scroll">
+          {/* Gradient Masks (Edge Fades) */}
+          <div className="absolute inset-y-0 left-0 w-32 md:w-64 bg-gradient-to-r from-surface to-transparent z-20 pointer-events-none"></div>
+          <div className="absolute inset-y-0 right-0 w-32 md:w-64 bg-gradient-to-l from-surface to-transparent z-20 pointer-events-none"></div>
+
+          {/* Row 1: Scrolling Left */}
+          <div className="flex w-[400%] animate-scroll mb-12">
             {[...clients, ...clients].map((client, i) => (
-              <div key={i} className="flex-shrink-0 mx-4 w-[200px] h-[80px] md:w-[260px] md:h-[100px] rounded-full bg-surfaceLight border border-white/10 flex justify-center items-center px-6 hover:border-primary/30 transition-colors duration-300">
+              <div key={`row1-${i}`} className="flex-shrink-0 mx-8 md:mx-12 w-32 h-32 md:w-48 md:h-48 flex justify-center items-center group relative">
+                {/* Glow behind on hover */}
+                <div className="absolute inset-0 bg-primary/10 blur-3xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                 <img
                   src={client.img}
                   alt={client.name}
-                  className="w-full h-full object-contain opacity-60 hover:opacity-100 transition-all duration-300"
+                  className="max-h-full max-w-full object-contain opacity-40 group-hover:opacity-100 group-hover:scale-110 brightness-0 invert transition-all duration-700 relative z-10"
+                  style={{ transform: i < clients.length ? `scale(${client.scale || 1})` : `scale(${client.scale || 1})` }}
+                />
+              </div>
+            ))}
+          </div>
+
+          {/* Row 2: Scrolling Right (Reversed) */}
+          <div className="flex w-[400%] animate-scroll-reverse">
+            {[...clients.slice().reverse(), ...clients.slice().reverse()].map((client, i) => (
+              <div key={`row2-${i}`} className="flex-shrink-0 mx-8 md:mx-12 w-32 h-32 md:w-48 md:h-48 flex justify-center items-center group relative">
+                {/* Glow behind on hover */}
+                <div className="absolute inset-0 bg-primary/10 blur-3xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <img
+                  src={client.img}
+                  alt={client.name}
+                  className="max-h-full max-w-full object-contain opacity-40 group-hover:opacity-100 group-hover:scale-110 brightness-0 invert transition-all duration-700 relative z-10"
+                  style={{ transform: i < clients.length ? `scale(${client.scale || 1})` : `scale(${client.scale || 1})` }}
                 />
               </div>
             ))}
           </div>
         </div>
-      </section>
+      </section >
 
       {/* CTA Section */}
-      <section className="py-32 relative overflow-hidden bg-surface border-t border-white/5">
+      < section className="py-32 relative overflow-hidden bg-surface border-t border-white/5" >
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-primary/10 via-background to-background"></div>
 
         <div className="container mx-auto px-6 relative z-10 flex flex-col items-center text-center">
@@ -515,7 +534,7 @@ export const Home: React.FC = () => {
             </span>
           </Link>
         </div>
-      </section>
-    </div>
+      </section >
+    </div >
   );
 };

@@ -86,9 +86,9 @@ export const projectsData: Project[] = [
     category: 'Résidentiel',
     location: 'Villefranche-sur-mer',
     year: '2025',
-    image: 'madone/EQUINOX-CUISINE_fourneau-molteni-nice.jpg',
+    image: 'madone/EQUINOX-CUISINE_madone.jpg',
     gallery: [
-      'madone/EQUINOX-CUISINE_fourneau-molteni-monaco.jpg',
+      'madone/EQUINOX-CUISINE_fourneau-molteni-nice.jpg',
       'madone/EQUINOX-CUISINE_inox-mat-marbre.jpg',
       'madone/EQUINOX-CUISINE_fourneau-molteni.jpg',
       'madone/EQUINOX-CUISINE_molteni.jpg',
