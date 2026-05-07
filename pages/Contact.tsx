@@ -29,8 +29,8 @@ export const Contact: React.FC = () => {
       setFormStatus('submitting');
 
       try {
-         // Utilisation d'une variable d'environnement pour l'URL de l'API
-         const apiUrl = import.meta.env.VITE_API_URL || 'http://localhost:3001';
+         // Sur Vercel, on utilise la route relative /api/contact
+         const apiUrl = import.meta.env.VITE_API_URL || '';
          const response = await fetch(`${apiUrl}/api/contact`, {
             method: 'POST',
             headers: {
