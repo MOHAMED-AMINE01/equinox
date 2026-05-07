@@ -7,18 +7,29 @@ export default async function handler(req, res) {
 
   const { name, email, phone, subject, message } = req.body;
 
-  // Validation basique
-  if (!name || !email || !message) {
-    return res.status(400).json({ message: 'Veuillez remplir tous les champs obligatoires.' });
+  console.log('Tentative d\'envoi d\'email pour:', email);
+
+  // Configuration détaillée pour le débogage
+  const host = process.env.EMAIL_HOST || 'smtp.gmail.com';
+  const port = parseInt(process.env.EMAIL_PORT || '587');
+  const user = process.env.EMAIL_USER;
+  const pass = process.env.EMAIL_PASS;
+
+  if (!user || !pass) {
+    console.error('ERREUR: EMAIL_USER ou EMAIL_PASS non configurés dans Vercel');
+    return res.status(500).json({ 
+      message: 'Configuration serveur incomplète (Variables d\'environnement manquantes)',
+      details: 'Veuillez vérifier les variables EMAIL_USER et EMAIL_PASS sur Vercel.'
+    });
   }
 
   const transporter = nodemailer.createTransport({
-    host: process.env.EMAIL_HOST,
-    port: parseInt(process.env.EMAIL_PORT || '587'),
-    secure: process.env.EMAIL_SECURE === 'true',
+    host,
+    port,
+    secure: port === 465, // True pour 465, false pour 587
     auth: {
-      user: process.env.EMAIL_USER,
-      pass: process.env.EMAIL_PASS,
+      user,
+      pass,
     },
     tls: {
       rejectUnauthorized: false
