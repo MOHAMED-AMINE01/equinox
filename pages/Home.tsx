@@ -8,7 +8,7 @@ export const Home: React.FC = () => {
   const clients = [
     { name: 'Aéroport de Nice', img: '/LOGOS CLIENTS/B_Aeroport_Nice_Cote_d_Azur_logo.png' },
     { name: 'AS Monaco', img: '/LOGOS CLIENTS/B_AS-monaco.png', scale: 0.8 },
-    { name: 'Royal Mougins', img: '/LOGOS CLIENTS/B_Logo+Royal+Mougins.png', scale: 0.9 },
+    { name: 'Royal Mougins', img: '/LOGOS CLIENTS/B_Logo%2BRoyal%2BMougins.png', scale: 0.9 },
     { name: 'Mairie de Monaco', img: '/LOGOS CLIENTS/B_Mairie_de_Monaco_logo.png', scale: 0.9 },
     { name: 'Monte-Carlo SBM', img: '/LOGOS CLIENTS/B_montecarlo-1.png', scale: 1.4 },
     { name: 'Groupe Barrière', img: '/LOGOS CLIENTS/B_logo-groupe-barriere-21683efd0f2d7f3.png', scale: 1.5 },
