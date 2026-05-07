@@ -6,6 +6,7 @@ declare global {
   }
 }
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 const CookieBanner: React.FC = () => {
   const [visible, setVisible] = useState(true);
@@ -77,7 +78,7 @@ const CookieBanner: React.FC = () => {
       <div className="flex-1 text-sm md:text-base text-white">
         <span className="font-bold text-xl text-primary">Cookies</span>
         <p className="mt-1 mb-3 text-white/90 leading-relaxed">
-          Nous utilisons des cookies pour personnaliser le contenu, mesurer l’audience et améliorer votre expérience. En cliquant sur « Accepter », vous consentez à leur utilisation. <a href="/privacy" className="underline text-primary">En savoir plus</a>.
+          Nous utilisons des cookies pour personnaliser le contenu, mesurer l’audience et améliorer votre expérience. En cliquant sur « Accepter », vous consentez à leur utilisation. <Link to="/privacy" className="underline text-primary">En savoir plus</Link>.
         </p>
         <div className="flex gap-3 mt-2">
           <button onClick={handleAccept} className="bg-primary text-white px-6 py-2 rounded-lg font-bold shadow hover:bg-primary/80 transition">Accepter</button>

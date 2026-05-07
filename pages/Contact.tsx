@@ -7,8 +7,54 @@ export const Contact: React.FC = () => {
    const [captchaVerified, setCaptchaVerified] = useState(false);
    const [captchaLoading, setCaptchaLoading] = useState(false);
    const [activeMap, setActiveMap] = useState<'fr' | 'mc' | null>(null);
+   const [formStatus, setFormStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
+   const [formData, setFormData] = useState({
+      name: '',
+      email: '',
+      phone: '',
+      subject: '',
+      message: ''
+   });
    const mapFrRef = useRef<HTMLDivElement>(null);
    const mapMcRef = useRef<HTMLDivElement>(null);
+
+   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+      const { name, value } = e.target;
+      setFormData((prev: typeof formData) => ({ ...prev, [name]: value }));
+   };
+
+   const handleSubmit = async (e: React.FormEvent) => {
+      e.preventDefault();
+      
+      setFormStatus('submitting');
+
+      try {
+         // Utilisation d'une variable d'environnement pour l'URL de l'API
+         const apiUrl = import.meta.env.VITE_API_URL || 'http://localhost:3001';
+         const response = await fetch(`${apiUrl}/api/contact`, {
+            method: 'POST',
+            headers: {
+               'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(formData),
+         });
+
+         if (response.ok) {
+            setFormStatus('success');
+            setFormData({ name: '', email: '', phone: '', subject: '', message: '' });
+            
+            // Masquer le message de succès après 2 secondes
+            setTimeout(() => {
+               setFormStatus('idle');
+            }, 2000);
+         } else {
+            setFormStatus('error');
+         }
+      } catch (error) {
+         console.error('Error submitting form:', error);
+         setFormStatus('error');
+      }
+   };
 
    const handleCaptchaClick = () => {
       if (!captchaVerified && !captchaLoading) {
@@ -72,11 +118,14 @@ export const Contact: React.FC = () => {
                   <div className="bg-surfaceLight/50 backdrop-blur-sm p-8 md:p-14 rounded-3xl border border-white/5 relative z-10">
                      <h2 className="text-3xl md:text-4xl font-display font-bold mb-12 text-white">Envoyez-nous un message</h2>
 
-                     <form className="space-y-10" action="mailto:contact@equinox.mc" method="post" encType="text/plain">
+                     <form className="space-y-10" onSubmit={handleSubmit}>
                         {/* Name */}
                         <div className="group">
                            <input
                               type="text"
+                              name="name"
+                              value={formData.name}
+                              onChange={handleInputChange}
                               placeholder="Nom, Prénom *"
                               required
                               className="w-full bg-transparent border-b border-white/20 py-4 text-white placeholder:text-textMuted/50 focus:outline-none focus:border-primary transition-colors text-lg"
@@ -87,6 +136,9 @@ export const Contact: React.FC = () => {
                         <div className="group">
                            <input
                               type="email"
+                              name="email"
+                              value={formData.email}
+                              onChange={handleInputChange}
                               placeholder="Email *"
                               required
                               className="w-full bg-transparent border-b border-white/20 py-4 text-white placeholder:text-textMuted/50 focus:outline-none focus:border-primary transition-colors text-lg"
@@ -97,6 +149,9 @@ export const Contact: React.FC = () => {
                         <div className="group">
                            <input
                               type="tel"
+                              name="phone"
+                              value={formData.phone}
+                              onChange={handleInputChange}
                               placeholder="Téléphone"
                               className="w-full bg-transparent border-b border-white/20 py-4 text-white placeholder:text-textMuted/50 focus:outline-none focus:border-primary transition-colors text-lg"
                            />
@@ -106,6 +161,9 @@ export const Contact: React.FC = () => {
                         <div className="group">
                            <input
                               type="text"
+                              name="subject"
+                              value={formData.subject}
+                              onChange={handleInputChange}
                               placeholder="Sujet"
                               className="w-full bg-transparent border-b border-white/20 py-4 text-white placeholder:text-textMuted/50 focus:outline-none focus:border-primary transition-colors text-lg"
                            />
@@ -115,51 +173,34 @@ export const Contact: React.FC = () => {
                         <div className="group">
                            <textarea
                               rows={4}
+                              name="message"
+                              value={formData.message}
+                              onChange={handleInputChange}
                               placeholder="Votre Message *"
                               required
                               className="w-full bg-transparent border-b border-white/20 py-4 text-white placeholder:text-textMuted/50 focus:outline-none focus:border-primary transition-colors resize-none text-lg"
                            ></textarea>
                         </div>
 
-                        {/* Interactive Recaptcha Simulation */}
-                        <div className="pt-2">
-                           <div
-                              className="bg-[#222] border border-[#333] hover:border-[#444] rounded p-3 flex items-center gap-3 w-fit pr-10 cursor-pointer shadow-inner transition-colors select-none"
-                              onClick={handleCaptchaClick}
-                           >
-                              <div className={`w-7 h-7 border-2 rounded-sm flex items-center justify-center bg-white/5 transition-all duration-300 ${captchaVerified ? 'border-transparent' : 'border-[#555] hover:border-[#777]'}`}>
-                                 {captchaLoading && (
-                                    <Loader2 className="animate-spin text-primary" size={18} />
-                                 )}
-                                 {captchaVerified && (
-                                    <Check className="text-[#46d246]" size={28} strokeWidth={3} />
-                                 )}
-                                 {!captchaLoading && !captchaVerified && (
-                                    <div className="w-full h-full"></div>
-                                 )}
-                              </div>
-                              <div className="flex flex-col">
-                                 <span className="text-[12px] text-white/90 leading-tight font-medium">I'm not a robot</span>
-                                 <div className="flex flex-col items-end mt-0.5">
-                                    <span className="text-[9px] text-[#777]">reCAPTCHA</span>
-                                    <div className="flex gap-1 text-[8px] text-[#555]">
-                                       <span>Privacy</span>
-                                       <span>-</span>
-                                       <span>Terms</span>
-                                    </div>
-                                 </div>
-                              </div>
-                           </div>
-                        </div>
-
                         {/* Submit Button - Bubble Style */}
-                        <div className="pt-8">
-                           <button type="submit" className="group relative inline-flex items-center justify-start h-16 w-40 cursor-pointer bg-transparent border-none p-0 focus:outline-none">
+                        <div className="pt-8 flex flex-col gap-4">
+                           <button 
+                              type="submit" 
+                              disabled={formStatus === 'submitting'}
+                              className="group relative inline-flex items-center justify-start h-16 w-40 cursor-pointer bg-transparent border-none p-0 focus:outline-none disabled:opacity-50 disabled:cursor-not-allowed"
+                           >
                               <span className="absolute left-0 h-16 w-16 bg-white/5 rounded-full transition-all duration-500 ease-in-out group-hover:w-full group-hover:bg-primary border border-white/10 shadow-lg"></span>
                               <span className="relative z-10 pl-6 text-sm font-bold tracking-[0.2em] uppercase text-white transition-colors whitespace-nowrap">
-                                 Envoyer
+                                 {formStatus === 'submitting' ? 'Envoi...' : 'Envoyer'}
                               </span>
                            </button>
+
+                           {formStatus === 'success' && (
+                              <p className="text-green-500 font-medium">Votre message a été envoyé avec succès !</p>
+                           )}
+                           {formStatus === 'error' && (
+                              <p className="text-red-500 font-medium">Une erreur est survenue. Veuillez réessayer.</p>
+                           )}
                         </div>
                      </form>
                   </div>
