@@ -19,7 +19,7 @@ export const About: React.FC = () => {
          <div className="relative h-[60vh] min-h-[500px] w-full flex flex-col justify-center items-center overflow-hidden border-b border-white/5 pt-32">
             <div className="absolute inset-0">
                <img
-                  src="/apropos_page/EQUINOX-cuisine-installation_monaco.jpg"
+                  src="/ML_PC/EQUINOX-conception-installation-grandes-cuisines.png"
                   alt="About Header"
                   className="w-full h-full object-cover scale-105"
                />

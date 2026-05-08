@@ -57,7 +57,7 @@ const CookieBanner: React.FC = () => {
   if (!visible) return null;
 
   return (
-    <div className="fixed bottom-8 right-8 z-50 max-w-xl w-[95vw] bg-background border border-white/10 rounded-3xl shadow-2xl flex items-center p-6 gap-6 animate-fade-in backdrop-blur-md" style={{boxShadow:'0 8px 32px 0 rgba(0,0,0,0.25)'}}>
+    <div className="fixed bottom-4 left-1/2 -translate-x-1/2 md:bottom-8 md:right-8 md:left-auto md:translate-x-0 z-50 max-w-xl w-[95vw] md:w-full bg-background border border-white/10 rounded-3xl shadow-2xl flex items-center p-6 gap-6 animate-fade-in backdrop-blur-md" style={{boxShadow:'0 8px 32px 0 rgba(0,0,0,0.25)'}}>
       {/* Cookies SVG réalistes */}
       <div className="hidden md:flex flex-col gap-2 items-center">
         <svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">

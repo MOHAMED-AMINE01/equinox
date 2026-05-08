@@ -24,13 +24,13 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) =>
     { name: 'Accueil', path: '/' },
     { name: 'Services', path: '/services' },
     { name: 'Réalisations', path: '/portfolio' },
-    { name: 'À propos', path: '/about' },
+    { name: 'À propos', path: '/a-propos' },
     { name: 'Contact', path: '/contact' },
   ];
 
   // Pages with a hero image that should sit under the transparent navbar.
   // For these pages, we remove the top padding from the main container.
-  const pagesWithHero = ['/', '/services', '/about', '/contact', '/portfolio', '/legal', '/privacy'];
+  const pagesWithHero = ['/', '/services', '/a-propos', '/contact', '/portfolio', '/legal', '/privacy'];
   const isProjectDetailsPage = /^\/portfolio\/\d+$/.test(location.pathname);
   const hasHero = pagesWithHero.includes(location.pathname) || isProjectDetailsPage;
 
@@ -148,7 +148,7 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) =>
                   { name: 'Accueil', path: '/' },
                   { name: 'Services', path: '/services' },
                   { name: 'Réalisations', path: '/portfolio' },
-                  { name: 'À propos', path: '/about' },
+                  { name: 'À propos', path: '/a-propos' },
                   { name: 'Contact', path: '/contact' },
                 ].map((link) => (
                   <li key={link.name}>

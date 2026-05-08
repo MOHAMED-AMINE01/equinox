@@ -112,13 +112,13 @@ export const Home: React.FC = () => {
 
             {/* 4. Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 items-start sm:items-center animate-up delay-400">
-              <a href="mailto:contact@equinox.mc?subject=Discussion sur mon projet de cuisine professionnelle" className="w-full sm:w-auto">
+              <a href="tel:+33493989339" className="w-full sm:w-auto">
                 <Button size="lg" className="w-full sm:w-auto px-10 py-5 text-lg group shadow-lg shadow-primary/20 justify-between sm:justify-center">
                   <span className="relative z-10">Discutons de votre projet</span>
                   <ArrowUpRight className="ml-2 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" size={20} />
                 </Button>
               </a>
-              <a href="tel:+33493989339" className="w-full sm:w-auto">
+              <a href="mailto:contact@equinox.mc?subject=Demande de devis" className="w-full sm:w-auto">
                 <Button variant="outline" size="lg" className="w-full sm:w-auto px-10 py-5 text-lg hover:bg-white/5 backdrop-blur-sm justify-center">
                   Demander un devis
                 </Button>
@@ -321,7 +321,7 @@ export const Home: React.FC = () => {
 
               {/* "Read More" Style Link */}
               <div className="mt-8">
-                <Link to="/about" className="inline-flex items-center gap-3 text-primary font-bold tracking-widest text-xs uppercase hover:text-white transition-colors group">
+                <Link to="/a-propos" className="inline-flex items-center gap-3 text-primary font-bold tracking-widest text-xs uppercase hover:text-white transition-colors group">
                   <span className="text-lg group-hover:translate-x-1 transition-transform">+</span> EN SAVOIR PLUS
                 </Link>
               </div>

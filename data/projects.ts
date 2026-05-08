@@ -6,7 +6,7 @@ export const projectsData: Project[] = [
     title: 'PHILIPPE TAYAC',
     category: 'Pâtisserie',
     location: 'Monaco',
-    year: '2024',
+    year: '2025',
     image: '/tayac/EQUINOX-CUISINE_tayac.jpg',
     gallery: [
       '/tayac/EQUINOX-CUISINE_patisserie-tayac-monaco-03.jpg',
@@ -58,7 +58,7 @@ export const projectsData: Project[] = [
     title: 'DOMAINE DES MAPLIERS',
     category: 'Viticole',
     location: 'Lorgues',
-    year: '2023',
+    year: '2025',
     image: 'mapliers/EQUINOX-CUISINE_domaine-mapliers.jpg',
     gallery: [
       'mapliers/EQUINOX-CUISINE_domaine-des-mappliers.jpg',
@@ -168,7 +168,7 @@ export const projectsData: Project[] = [
     title: 'CAFÉ DE TURIN',
     category: 'Restauration',
     location: 'Nice',
-    year: '2024',
+    year: '2026',
     image: '/cafe_turin/EQUINOX-CUISINE_restaurant-Cafe-de-turin-nice.jpg',
     gallery: [
       '/cafe_turin/EQUINOX-CUISINE_Cafe-de-turin-cote-d-azur.jpg',
