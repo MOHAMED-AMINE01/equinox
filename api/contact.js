@@ -141,6 +141,9 @@ export default async function handler(req, res) {
                     Nous avons bien reçu votre message concernant : <strong>"${subject || 'Demande de contact'}"</strong>.<br><br>
                     Notre équipe étudie votre demande et reviendra vers vous dans les plus brefs délais.
                   </p>
+                  <p style="font-size: 13px; color: #999999; margin-top: 30px; border-top: 1px solid #eeeeee; padding-top: 20px; text-align: center;">
+                    Ce message est envoyé automatiquement, merci de ne pas y répondre. Pour toute question, contactez-nous à <a href="mailto:contact@equinox.mc" class="accent" style="color: #c9a050; text-decoration: none;">contact@equinox.mc</a>
+                  </p>
                 </div>
                 <div class="footer">
                   &copy; ${new Date().getFullYear()} EQUINOX MONACO &bull; NICE<br>
