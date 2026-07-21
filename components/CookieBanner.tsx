@@ -30,7 +30,8 @@ const CookieBanner: React.FC = () => {
     function gtag(...args: any[]) { window.dataLayer!.push(args); }
     window.gtag = gtag;
     window.gtag('js', new Date());
-    window.gtag('config', 'G-1TDHDSS6BQ');
+    // cookie_expires : 13 mois max (recommandation CNIL pour les cookies de mesure d'audience)
+    window.gtag('config', 'G-1TDHDSS6BQ', { cookie_expires: 33696000 });
   }
 
   const handleAccept = () => {
@@ -52,6 +53,8 @@ const CookieBanner: React.FC = () => {
   React.useEffect(() => {
     const consent = localStorage.getItem('cookieConsent');
     if (consent) setVisible(false);
+    // Recharger GA aux visites suivantes uniquement si le visiteur avait accepté
+    if (consent === 'true') loadGoogleAnalytics();
   }, []);
 
   if (!visible) return null;
